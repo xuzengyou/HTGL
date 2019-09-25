@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>10讯后台管理系统</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="10讯财经,股票,外汇,基金,黄金,财经评论,新股,港股。" />
+    <meta name="description" content="10讯财经网,做专业财经资讯领跑者，实时股票行情，提供宏观、股票、外汇等财经领域的报道；讯息快、内容全、角度丰富并怀有全球视野。" />
+    <link rel="shortcut icon" href="./css/icon/favicon.ico" type="image/x-icon">
+    <!-- 引入jQuerry -->
+    <script src="./js/lib/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <base target="_blank">
+</head>
+<body>
+    <div class="one">
+        <!-- <img src="./img/logo.png" alt=""> -->
+    </div>
+    <div class="login">
+        <h1>管理员登录</h1><br>
+        <input type="text" placeholder="请输入用户名" autofocus="autofocus" value="WSHD"><br>
+        <input type="password" name="" id="" placeholder="请输入用户密码"><br>
+        <button type="button">登录</button>
+    </div>
+
+    <script>
+        $(function(){
+            $("button[type=button]").click(function(){
+
+                var userName=$("input[type=text]").val().trim();
+                var passWord=$("input[type=password]").val();
+                console.log(userName+passWord);
+                
+                if(userName=="WSHD"&&passWord=="WSHD"){
+                window.location.href="./html/Wzlb/Wzlb.html";
+                window.sessionStorage.setItem("userName",userName);
+                window.sessionStorage.setItem("passWord",passWord);
+                }else{
+                    alert("用户名或密码不正确");
+                }
+            });
+            //键盘抬起事件
+            $("input[type=password]").keyup(function(e){
+                if (e.keyCode === 13){
+                    var userName=$("input[type=text]").val().trim();
+                    var passWord=$("input[type=password]").val();
+                    console.log(userName+passWord);
+                    
+                    if(userName=="WSHD"&&passWord=="WSHD"){
+                        window.location.href="./html/Wzlb/Wzlb.html";
+                        window.sessionStorage.setItem("userName",userName);
+                        window.sessionStorage.setItem("passWord",passWord);
+                    }else{
+                        alert("用户名或密码不正确");
+                    }
+                }
+            });
+
+
+
+        })
+    </script>
+</body>
+</html>

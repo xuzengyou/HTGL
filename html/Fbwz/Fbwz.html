@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>10讯后台管理系统</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="10讯财经,股票,外汇,基金,黄金,财经评论,新股,港股。" />
+    <meta name="description" content="10讯财经网,做专业财经资讯领跑者，实时股票行情，提供宏观、股票、外汇等财经领域的报道；讯息快、内容全、角度丰富并怀有全球视野。" />
+    <link rel="shortcut icon" href="../../css/icon/favicon.ico" type="image/x-icon">
+    <!-- 引入jq -->
+    <script src="../../js/lib/jquery-3.3.1.min.js"></script>
+    <!-- 引入js -->
+    <script src="./js/Fbwz.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="./css/Fbwz.css">
+    <!-- 引入分页 -->
+    <script src="./js/jquery.pagination.js"></script>
+    <!-- 引入文本编辑器 -->
+    <link rel="stylesheet" href="./bjq/themes/default/default.css" />
+    <script charset="utf-8" src="./bjq/kindeditor-min.js"></script>
+    <script charset="utf-8" src="./bjq/lang/zh_CN.js"></script>
+    <base target="_blank">
+</head>
+<body>
+    <div class="c">
+        <!-- 头部开始 -->
+        <div class="head">
+            <a href="../Wzlb/Wzlb.html"><img src="../../img/logo.png" alt=""></a>
+            <a href="../Wzlb/Wzlb.html">首页</a>
+            <a class="user">您好XXX欢迎您登陆</a>
+            <a href="../../login.html" class="tc">退出</a>
+        </div>
+        <!-- 头部结束 -->
+        <!-- 主体部分开始 -->
+        <div class="main">
+            <!-- 主题左边开始 -->
+            <div class="mainL">
+                <!-- 主题左边第一部分 -->
+                <div class="mLo">
+                    <div class="mLoo">
+                        <span></span><span>栏目管理</span>
+                    </div>
+                    <div class="mLot">
+                        <p><a href="../Wzlb/Wzlb.html">网站栏目管理</a></p>
+                        <p><a href="../Wzlb/Wzlb.html">所有文档列表</a></p>
+                    </div>
+                </div>
+                <!-- 主题左边第二部分 -->
+                <div class="mLt">
+                    <div class="mLto">
+                        <span></span><span>图片管理</span>
+                    </div>
+                    <div class="mLtt">
+                        <p><a href="../GGtp/GGtp.html">广告区图片</a></p>
+                        <p><a href="../GGtp/GGtp.html">直播区图片</a></p>
+                        <p><a href="../GGtp/GGtp.html">视频区图片</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 主体左边结束 -->
+
+            <!-- 主体右边开始 -->
+            <div class="mainR">
+                <!-- 主题右边第一部分开始 -->
+                <div class="mRo">
+                    <div class="mRoo">
+                        <a href="#">所有栏目</a>
+                        <span style="color: #ccc;">></span>
+                        <a href="#">文章列表</a>
+                        <span style="color: #ccc;">></span>
+                        <span>发布文章</span>
+                    </div>
+                    <div class="mRot">
+                        <div class="mRoto">
+                            <span>文章标题</span>
+                        </div>
+                        <div class="mRott">
+                            <input type="text" placeholder="请输入文章标题" autofocus class="wzbt">
+                        </div>
+                    </div>
+                    <div class="mRoth">
+                        <div class="mRotho">
+                            <span>自定义属性</span>
+                        </div>
+                        <div class="mRotht">
+                            <div class="mRothto">
+                                <span>首页</span><span>√</span>
+                            </div>
+                            <div class="mRothtt">
+                                <span class="jiac">加粗</span><span>√</span>
+                            </div>
+                            <div class="mRothtth">
+                                <span>图片</span><span>√</span>
+                            </div>
+                            <div class="mRothtf">
+                                <span>视频</span><span>√</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mRof">
+                        <div class="mRofo">
+                            <span>缩略图</span>
+                        </div>
+                        <div class="mRoft">
+                            <input type="text" autofocus class="lj">
+                            <input type="file" name="" class="bdsc" >
+                            <span>本地上传</span>
+                            <a style="cursor: pointer;" class="znxz">站内选择</a>
+                        </div>
+                        <div class="slt"></div>
+                    </div>
+                    <div class="mRofi">
+                        <div class="mRofio">
+                            <span>文章主栏目</span>
+                        </div>
+                        <div class="c1">
+                            <div class="mRofit" style="cursor: pointer;">
+                                <span>请选择主栏目</span><span class="zsj"></span>
+                            </div>
+                            <div class="zlb">
+                                <div class="zlbO">
+                                    <span>财经</span>
+                                </div>
+                                <div class="zlbT">
+                                    <span>股票</span>
+                                </div>
+                                <div class="zlbTh">
+                                    <span>外汇</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c2">
+                            <div class="mRofith" style="cursor: pointer;">
+                                <span>请选择子栏目</span><span class="flm"></span>
+                            </div>
+                            <div class="flb">
+                                <div class="flbO">
+                                    <span>幻灯</span>
+                                </div>
+                                <div class="flbT">
+                                    <span>正文推荐</span>
+                                </div>
+                                <div class="flbTh">
+                                    <span>图文结合</span>
+                                </div>
+                                <div class="flbF">
+                                    <span>新手学习</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 主体右边站内选择开始 -->
+                <div class="zn">
+                    <div class="zNl">
+                        <div class="zNlo">
+                            <p>
+                                <span>选择</span>
+                            </p>
+                            <p>
+                                <span>点击文件或本地上传，即可上传图片</span>
+                            </p>
+                        </div>
+                        <div class="zNlt">
+                            <ul>
+                                <li>
+                                    <span></span><span>190901</span>
+                                </li>
+                                <li>
+                                    <span></span><span>190902</span>
+                                </li>
+                                <li>
+                                    <span></span><span>190903</span>
+                                </li>
+                                <li>
+                                    <span></span><span>190904</span>
+                                </li>
+                                <li>
+                                    <span></span><span>190905</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="zNlth">
+                            <span>新建文件夹</span>
+                            <span>删除文件夹</span>
+                            <input type="text" placeholder="请输入新建或者要删除的文件夹名称..." autofocus>
+                        </div>
+                    </div>
+                    <div class="zNr">
+                        <div class="zNro">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>选择</td>
+                                        <td>点击名称选择图片</td>
+                                        <td>文件大小</td>
+                                        <td>上传时间</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                            <span>4154556.png</span>
+                                        </td>
+                                        <td>95.3k</td>
+                                        <td>2019-09-20 09:49:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                            <span>4154556.png</span>
+                                        </td>
+                                        <td>95.3k</td>
+                                        <td>2019-09-20 09:49:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                            <span>4154556.png</span>
+                                        </td>
+                                        <td>95.3k</td>
+                                        <td>2019-09-20 09:49:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                            <span>4154556.png</span>
+                                        </td>
+                                        <td>95.3k</td>
+                                        <td>2019-09-20 09:49:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                            <span>4154556.png</span>
+                                        </td>
+                                        <td>95.3k</td>
+                                        <td>2019-09-20 09:49:51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                            <span>4154556.png</span>
+                                        </td>
+                                        <td>95.3k</td>
+                                        <td>2019-09-20 09:49:51</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="zNrt">
+                            <div class="zNrto">
+                                <!-- 分页 -->
+                                <div class="m-style M-box11"></div>
+                            </div>
+                            <div class="zNrtt" style="overflow: hidden;">
+                                <span>上传:</span>
+                                <input type="file" class="shangc">
+                                <span class="shanc">删除图片</span>
+                                <span class="shangch">上传图片</span>
+                            </div>
+                        </div>
+                        <div class="yulan">
+                            <img src="../../img/logo.png" alt="" class="shixiao">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- 主体右边第二部分开始 -->
+                <div class="mRt">
+                   <div class="mRto">
+                       <span>文章内容:</span>
+                   </div>
+                   <div class="mRtt">
+                        <form>
+                            <textarea name="content" style="width:1700px;height:360px;visibility:hidden;"></textarea>
+                            <p>
+                                <input type="button" name="getHtml" value="取得HTML" />
+                                <input type="button" name="isEmpty" value="判断是否为空" />
+                                <input type="button" name="getText" value="取得文本(包含img,embed)" />
+                                <input type="button" name="selectedHtml" value="取得选中HTML" />
+                                <br/>
+                                <br/>
+                                <input type="button" name="setHtml" value="设置HTML" />
+                                <input type="button" name="setText" value="设置文本" />
+                                <input type="button" name="insertHtml" value="插入HTML" />
+                                <input type="button" name="appendHtml" value="添加HTML" />
+                                <input type="button" name="clear" value="清空内容" />
+                                <input type="reset" name="reset" value="Reset" />
+                            </p>
+                        </form>
+                   </div>
+                   <div class="mRtth">
+                       <div class="mRttho">
+                           <span>浏览次数</span><span>31651</span>
+                       </div>
+                       <div class="mRttht">
+                           <div class="mRtthto">
+                               <span>文章排序</span>
+                           </div>
+                           <div class="mRtthtt">
+                               <div class="mr">
+                                   <span>默认排序</span><span></span>
+                               </div>
+                               <div class="lb"></div>
+                           </div>
+                       </div>
+                       <div class="mRtthth">
+                           <span>发布时间</span><span class="shij">2019-09-11 13:57:55</span>
+                       </div>
+                   </div>
+                   <div class="mRtf">
+                       <button type="button" class="fb">发布</button>
+                   </div>
+                </div>
+
+            </div>
+            <!-- 主体右边结束 -->
+        </div>
+        <!-- 主体部分结束 -->
+    </div>
+    
+    <script>
+        // $(function(){
+
+        
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                allowFileManager : true
+            });
+            K('input[name=getHtml]').click(function(e) {
+                alert(editor.html());
+                // console.log(123);
+                //轮播图下方新闻
+                // $.ajax({
+                //     type:"get",
+                //     url:"http://192.168.0.171:8080/WSHD/jiekou/AllStock?page=0&num=2",
+                //     dataType:"json",
+                //     data:{},
+                //     success:function(res){
+                //         console.log(res);
+                //     var html="";
+                //     for(var i in res.data){
+                //         var url=res.data[i].httpUrl,id=res.data[i].aid,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
+                        
+                //         console.log(href);
+                //         html+='<div class="mainToplto">';
+                        
+                //             html+="<a href="+href+">";
+                //                 html+="<img src="+res.data[i].thumb+" alt="+res.data[i].thumb+" >";
+                //             html+="</a>";
+                //             html+="<a href="+href+">"+res.data[i].title+"</a>";
+
+                //         html+='</div>';
+                        
+                //         }
+                //         console.log(html);
+                        console.log(editor.html());
+                //     }
+                // });
+
+            });
+            
+
+
+
+            K('input[name=isEmpty]').click(function(e) {
+                alert(editor.isEmpty());
+            });
+            K('input[name=getText]').click(function(e) {
+                alert(editor.text());
+            });
+            K('input[name=selectedHtml]').click(function(e) {
+                alert(editor.selectedHtml());
+            });
+            K('input[name=setHtml]').click(function(e) {
+                editor.html('<h3>Hello KindEditor</h3>');
+            });
+            K('input[name=setText]').click(function(e) {
+                editor.text('<h3>Hello KindEditor</h3>');
+            });
+            K('input[name=insertHtml]').click(function(e) {
+                editor.insertHtml('<strong>插入HTML</strong>');
+            });
+            K('input[name=appendHtml]').click(function(e) {
+                editor.appendHtml('<strong>添加HTML</strong>');
+            });
+            K('input[name=clear]').click(function(e) {
+                editor.html('');
+            });
+        });
+
+    // })
+    </script>
+</body>
+</html>

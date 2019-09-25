@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>10讯后台管理系统</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="10讯财经,股票,外汇,基金,黄金,财经评论,新股,港股。" />
+    <meta name="description" content="10讯财经网,做专业财经资讯领跑者，实时股票行情，提供宏观、股票、外汇等财经领域的报道；讯息快、内容全、角度丰富并怀有全球视野。" />
+    <link rel="shortcut icon" href="../../css/icon/favicon.ico" type="image/x-icon">
+    <!-- 引入jq -->
+    <script src="../../js/lib/jquery-3.3.1.min.js"></script>
+    <!-- 引入js -->
+    <script src="./js/GGtp.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="./css/GGtp.css">
+    <base target="_blank">
+</head>
+<body>
+    <div class="c">
+        <!-- 头部开始 -->
+        <div class="head">
+            <a href="../Wzlb/Wzlb.html">
+                <img src="../../img/logo.png" alt="">
+            </a>
+            <a href="../Wzlb/Wzlb.html">首页</a>
+            <a class="user">您好XXX欢迎您登陆</a>
+            <a href="../../login.html" class="tc">退出</a>
+        </div>
+        <!-- 头部结束 -->
+        <!-- 主体部分开始 -->
+        <div class="main">
+            <!-- 主题左边开始 -->
+            <div class="mainL">
+                <!-- 主题左边第一部分 -->
+                <div class="mLo">
+                    <div class="mLoo">
+                        <span></span><span>栏目管理</span>
+                    </div>
+                    <div class="mLot">
+                        <p><a href="../Wzlb/Wzlb.html">网站栏目管理</a></p>
+                        <p><a href="../Wzlb/Wzlb.html">所有文档列表</a></p>
+                    </div>
+                </div>
+                <!-- 主题左边第二部分 -->
+                <div class="mLt">
+                    <div class="mLto">
+                        <span></span><span>图片管理</span>
+                    </div>
+                    <div class="mLtt">
+                        <p><a href="../GGtp/GGtp.html">广告区图片</a></p>
+                        <p><a href="../GGtp/GGtp.html">直播区图片</a></p>
+                        <p><a href="../GGtp/GGtp.html">视频区图片</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 主体左边结束 -->
+
+            <!-- 主体右边开始 -->
+            <div class="mainR">
+                <!-- 主题右边第一部分开始 -->
+                <div class="mRo">
+                    <div class="mRoo">
+                        <a href="#">首页</a>
+                        <span style="color: #ccc;">></span>
+                        <a href="#">图片管理</a>
+                        <span style="color: #ccc;">></span>
+                        <span>广告区图片</span>
+                    </div>
+                </div>
+                <!-- 主体右边第二部分开始 -->
+                <div class="mRt">
+                    <div class="mRto">
+                        <span class="ac" data-id="#one">财经</span>
+                        <span data-id="#two">股票</span>
+                        <span data-id="#three">外汇</span>
+                    </div>
+                    <div class="con">
+                        <!-- 财经开始 -->
+                        <div class="mRtt ac" id="one">
+                            <div class="mRtto">
+                                <div class="cs">
+                                    <span>首页</span>
+                                </div>
+                                <div class="cso" style="margin-left: 0;">
+                                    <div class="csoo"></div>
+                                    <div class="csot">
+                                        <input type="file" name="" class="fileinput1">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cso">
+                                    <div class="csoo"></div>
+                                    <div class="csot">
+                                        <input type="file" name="" class="fileinput1">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cso">
+                                    <div class="csoo"></div>
+                                    <div class="csot">
+                                        <input type="file" name="" class="fileinput1">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cso">
+                                    <div class="csoo"></div>
+                                    <div class="csot">
+                                        <input type="file" name="" class="fileinput1">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cso">
+                                    <div class="csoo"></div>
+                                    <div class="csot">
+                                        <input type="file" name="" class="fileinput1">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mRttt">
+                                <div class="chg">
+                                    <span>宏观</span>
+                                </div>
+                                <div class="chgo" style="margin-left: 0;">
+                                    <div class="chgoo"></div>
+                                    <div class="chgot">
+                                        <input type="file" name="" class="fileinput2">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="chgo">
+                                    <div class="chgoo"></div>
+                                    <div class="chgot">
+                                        <input type="file" name="" class="fileinput2">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cjj">
+                                    <span>基金</span>
+                                </div>
+                                <div class="cjjo">
+                                    <div class="cjjoo"></div>
+                                    <div class="cjjot">
+                                        <input type="file" name="" class="fileinput3">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cjjo">
+                                    <div class="cjjoo"></div>
+                                    <div class="cjjot">
+                                        <input type="file" name="" class="fileinput3">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="ckc">
+                                    <span>科创板</span>
+                                </div>
+                                <div class="ckco">
+                                    <div class="ckcoo"></div>
+                                    <div class="ckcot">
+                                        <input type="file" name="" class="fileinput4">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="ckco">
+                                    <div class="ckcoo"></div>
+                                    <div class="ckcot">
+                                        <input type="file" name="" class="fileinput4">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mRttth">
+                                <div class="csy">
+                                    <span>石油</span>
+                                </div>
+                                <div class="csyo" style="margin-left: 0;">
+                                    <div class="csyoo"></div>
+                                    <div class="csyot">
+                                        <input type="file" name="" class="fileinput5">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="csyo">
+                                    <div class="csyoo"></div>
+                                    <div class="csyot">
+                                        <input type="file" name="" class="fileinput5">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="chj">
+                                    <span>黄金</span>
+                                </div>
+                                <div class="chjo">
+                                    <div class="chjoo"></div>
+                                    <div class="chjot">
+                                        <input type="file" name="" class="fileinput6">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="chjo">
+                                    <div class="chjoo"></div>
+                                    <div class="chjot">
+                                        <input type="file" name="" class="fileinput6">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cxs">
+                                    <span>新三板</span>
+                                </div>
+                                <div class="cxso">
+                                    <div class="cxsoo"></div>
+                                    <div class="cxsot">
+                                        <input type="file" name="" class="fileinput7">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cxso">
+                                    <div class="cxsoo"></div>
+                                    <div class="cxsot">
+                                        <input type="file" name="" class="fileinput7">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mRttf">
+                                <div class="cxg">
+                                    <span>新股</span>
+                                </div>
+                                <div class="cxgo" style="margin-left: 0;">
+                                    <div class="cxgoo"></div>
+                                    <div class="cxgot">
+                                        <input type="file" name="" class="fileinput8">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cxgo">
+                                    <div class="cxgoo"></div>
+                                    <div class="cxgot">
+                                        <input type="file" name="" class="fileinput8">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cxw">
+                                    <span>新闻</span>
+                                </div>
+                                <div class="cxwo">
+                                    <div class="cxwoo"></div>
+                                    <div class="cxwot">
+                                        <input type="file" name="" class="fileinput9">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cxwo">
+                                    <div class="cxwoo"></div>
+                                    <div class="cxwot">
+                                        <input type="file" name="" class="fileinput9">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="czx">
+                                    <span>财经资讯</span>
+                                </div>
+                                <div class="czxo">
+                                    <div class="czxoo"></div>
+                                    <div class="czxot">
+                                        <input type="file" name="" class="fileinput10">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="czxo">
+                                    <div class="czxoo"></div>
+                                    <div class="czxot">
+                                        <input type="file" name="" class="fileinput10">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mRttfi">
+                                <div class="cwh">
+                                    <span>外汇</span>
+                                </div>
+                                <div class="cwho" style="margin-left: 0;">
+                                    <div class="cwhoo"></div>
+                                    <div class="cwhot">
+                                        <input type="file" name="" class="fileinput11">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cwho">
+                                    <div class="cwhoo"></div>
+                                    <div class="cwhot">
+                                        <input type="file" name="" class="fileinput11">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cgp">
+                                    <span>股票</span>
+                                </div>
+                                <div class="cgpo">
+                                    <div class="cgpoo"></div>
+                                    <div class="cgpot">
+                                        <input type="file" name="" class="fileinput12">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="cgpo">
+                                    <div class="cgpoo"></div>
+                                    <div class="cgpot">
+                                        <input type="file" name="" class="fileinput12">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 财经结束 -->
+                        <!-- 股票开始 -->
+                        <div class="qgp" id="two">
+                            <div class="qgpo">
+                                <div class="gs">
+                                    <span>首页</span>
+                                </div>
+                                <div class="gso" style="margin-left: 0;">
+                                    <div class="gsoo"></div>
+                                    <div class="gsot">
+                                        <input type="file" name="" class="fileinput14">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="gso">
+                                    <div class="gsoo"></div>
+                                    <div class="gsot">
+                                        <input type="file" name="" class="fileinput14">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qgpt">
+                                <div class="gzx">
+                                    <span>个股资讯</span>
+                                </div>
+                                <div class="gzxo" style="margin-left: 0;">
+                                    <div class="gzxoo"></div>
+                                    <div class="gzxot">
+                                        <input type="file" name="" class="fileinput15">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="gzxo">
+                                    <div class="gzxoo"></div>
+                                    <div class="gzxot">
+                                        <input type="file" name="" class="fileinput15">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="gdp">
+                                    <span>大盘评述</span>
+                                </div>
+                                <div class="gdpo" style="margin-left: 0;">
+                                    <div class="gdpoo"></div>
+                                    <div class="gdpot">
+                                        <input type="file" name="" class="fileinput16">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="gdpo">
+                                    <div class="gdpoo"></div>
+                                    <div class="gdpot">
+                                        <input type="file" name="" class="fileinput16">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="gsc">
+                                    <span>市场数据</span>
+                                </div>
+                                <div class="gsco" style="margin-left: 0;">
+                                    <div class="gscoo"></div>
+                                    <div class="gscot">
+                                        <input type="file" name="" class="fileinput17">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="gsco">
+                                    <div class="gscoo"></div>
+                                    <div class="gscot">
+                                        <input type="file" name="" class="fileinput17">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 股票结束 -->
+                        <!-- 外汇开始 -->
+                        <div class="qwh" id="three">
+                            <!-- 外汇首页 -->
+                            <div class="qwho">
+                                <div class="ws">
+                                    <span>首页</span>
+                                </div>
+                                <div class="wso" style="margin-left: 0;">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wso">
+                                    <div class="wsoo"></div>
+                                    <div class="wsot">
+                                        <input type="file" name="" class="fileinput18">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 外汇要闻、EIA库存 -->
+                            <div class="qwht">
+                                <div class="wyw">
+                                    <span>外汇要闻</span>
+                                </div>
+                                <div class="wywo" style="margin-left: 0;">
+                                    <div class="wywoo"></div>
+                                    <div class="wywot">
+                                        <input type="file" name="" class="fileinput19">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wywo">
+                                    <div class="wywoo"></div>
+                                    <div class="wywot">
+                                        <input type="file" name="" class="fileinput19">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wywo">
+                                    <div class="wywoo"></div>
+                                    <div class="wywot">
+                                        <input type="file" name="" class="fileinput19">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wywo">
+                                    <div class="wywoo"></div>
+                                    <div class="wywot">
+                                        <input type="file" name="" class="fileinput19">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wkc">
+                                    <span>EIA库存</span>
+                                </div>
+                                <div class="wkco" style="margin-left: 0;">
+                                    <div class="wkcoo"></div>
+                                    <div class="wkcot">
+                                        <input type="file" name="" class="fileinput20">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                                <div class="wkco">
+                                    <div class="wkcoo"></div>
+                                    <div class="wkcot">
+                                        <input type="file" name="" class="fileinput20">
+                                        <span>选择图片</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 外汇结束 -->
+
+                    </div>
+                    <!-- 最终页面正文 -->
+                    <div class="mRtth">
+                        <div class="azw">
+                            <span>正文</span>
+                        </div>
+                        <div class="azwo" style="margin-left: 0;">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                        <div class="azwo">
+                            <div class="azwoo"></div>
+                            <div class="azwot">
+                                <input type="file" name="" class="fileinput13">
+                                <span>选择图片</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 主体右边结束 -->
+        </div>
+        <!-- 主体部分结束 -->
+    </div>
+    
+    
+</body>
+</html>

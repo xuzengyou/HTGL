@@ -1,0 +1,1406 @@
+/* 头部开始 */
+.c{
+    width: 1920px;
+    height: 1920px;
+}
+.c .head{
+    width: 1920px;
+    line-height: 125px;
+    background-color: #046EB8;
+    vertical-align: middle;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.c .head a{
+    font-size: 24px;
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+.c .head a:nth-child(1){
+    width: 300px;
+    height: 45px;
+    margin-left: 20px;
+    position: relative;
+    top: -4px;
+}
+.c .head a:nth-child(1) img{
+    display:block;
+    width: 100%;
+    height: 100%;
+}
+.c .head a:nth-child(2){
+    margin-left: 20px;
+    margin-right: 1000px;
+}
+.c .head a:nth-child(3){
+    margin-right: 20px;
+}
+/* 头部结束 */
+.c .main{
+    width: 1920px;
+    display: flex;
+}
+/* 主题左边开始 */
+.c .main .mainL{
+    width: 170px;
+    height: 1300px;
+    /* background-color: antiquewhite; */
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+    position: fixed;
+    top: 130px;
+}
+/* 主题左边第一部分 */
+.c .main .mainL .mLo{
+    width: 170px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.c .main .mainL .mLo span{
+    cursor: pointer;
+    font-size: 18px;
+}
+.c .main .mainL .mLo .mLoo{
+    width: 170px;
+}
+.c .main .mainL .mLo .mLoo span:first-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #000;
+    margin-right: 10px;
+}
+.c .main .mainL .mLo .mLoo span.ac{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    left: -2px;
+}
+.c .main .mainL .mLo .mLot{
+    margin-left: 30px;
+    display: none;
+}
+.c .main .mainL .mLo .mLot p{
+    margin: 0;
+    line-height: 35px;
+}
+.c .main .mainL .mLo .mLot p a{
+    font-size: 18px;
+}
+/* 主题左边第二部分 */
+.c .main .mainL .mLt{
+    width: 170px;
+    margin-left: 20px;
+}
+.c .main .mainL .mLt span{
+    cursor: pointer;
+    font-size: 18px;
+}
+.c .main .mainL .mLt .mLto{
+    width: 170px;
+}
+.c .main .mainL .mLt .mLto span:first-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #000;
+    margin-right: 10px;
+}
+.c .main .mainL .mLt .mLto span.ac{
+    
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    left: -2px;
+}
+.c .main .mainL .mLt .mLtt{
+    margin-left: 30px;
+    display: none;
+}
+.c .main .mainL .mLt .mLtt p{
+    margin: 0;
+    line-height: 35px;
+}
+.c .main .mainL .mLt .mLtt p a{
+    font-size: 18px;
+}
+/* 主体右边开始 */
+.c .mainR{
+    width: 1750px;
+    margin-left: 200px;
+    margin-top: 130px;
+}
+/* 主体右边第一部分开始 */
+.c .mainR .mRo{
+    width: 1700px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.c .mainR .mRo .mRoo a{
+    font-size: 16px;
+}
+.c .mainR .mRo .mRoo span{
+    font-size: 16px;
+}
+
+/* 主体右边第二部分 */
+.c .mainR .mRt{
+    width: 1700px;
+}
+.c .mainR .mRt .mRto{
+    width: 1700px;
+    margin-top: 20px;
+}
+.c .mainR .mRt .mRto span{
+    display: inline-block;
+    width: 90px;
+    line-height: 30px;
+    background-color: #046EB8;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.c .mainR .mRt .mRto span.ac{
+    background-color: #fff;
+    color: #000;
+    background-color: #F3F3F3;
+}
+.c .mainR .mRt .mRtt{
+    width: 1700px;
+    margin-top: 20px;
+    display: none;
+}
+.c .mainR .mRt .mRtt.ac{
+    display: block;
+}
+/* 财经首页开始 */
+.c .mainR .mRt .mRtt .mRtto{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 120px;
+}
+.c .mainR .mRt .mRtt .mRtto .cs span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRtto .cso{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRtto .cso .csoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRtto .cso .csoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRtto .cso .csoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRtto .cso .csot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRtto .cso .csot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 财经首页结束 */
+/* 财经宏观开始 */
+.c .mainR .mRt .mRtt .mRttt{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 120px;
+    margin-top: 20px;
+}
+.c .mainR .mRt .mRtt .mRttt .chg span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttt .chgo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttt .chgo .chgoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttt .chgo .chgoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+}
+.c .mainR .mRt .mRtt .mRttt .chgo .chgoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttt .chgo .chgot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttt .chgo .chgot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 财经宏观结束 */
+
+/* 财经基金开始 */
+.c .mainR .mRt .mRtt .mRttt .cjj{
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttt .cjj span{
+    display: inline-block;
+    width: 90px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttt .cjjo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttt .cjjo .cjjoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttt .cjjo .cjjoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttt .cjjo .cjjoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttt .cjjo .cjjot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttt .cjjo .cjjot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 财经基金结束 */
+
+/* 财经科创板开始 */
+.c .mainR .mRt .mRtt .mRttt .ckc{
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttt .ckc span{
+    display: inline-block;
+    width: 90px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttt .ckco{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttt .ckco .ckcoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttt .ckco .ckcoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttt .ckco .ckcoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttt .ckco .ckcot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttt .ckco .ckcot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 财经科创板结束 */
+/* 财经石油开始 */
+.c .mainR .mRt .mRtt .mRttth{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 120px;
+    margin-top: 20px;
+}
+.c .mainR .mRt .mRtt .mRttth .csy{
+    /* margin-left: 20px; */
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttth .csy span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttth .csyo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttth .csyo .csyoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttth .csyo .csyoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttth .csyo .csyoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttth .csyo .csyot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttth .csyo .csyot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经石油结束 */
+/* 财经黄金开始 */
+.c .mainR .mRt .mRtt .mRttth .chj{
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttth .chj span{
+    display: inline-block;
+    width: 90px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttth .chjo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttth .chjo .chjoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttth .chjo .chjoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttth .chjo .chjoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttth .chjo .chjot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttth .chjo .chjot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 财经黄金结束 */
+/* 财经新三板开始 */
+.c .mainR .mRt .mRtt .mRttth .cxs{
+    margin-left: 20px;
+}
+.c .mainR .mRt .mRtt .mRttth .cxs span{
+    display: inline-block;
+    width: 90px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttth .cxso{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttth .cxso .cxsoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttth .cxso .cxsoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttth .cxso .cxsoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttth .cxso .cxsot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttth .cxso .cxsot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经新三板结束 */
+/* 财经新股开始 */
+.c .mainR .mRt .mRtt .mRttf{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 120px;
+    margin-top: 20px;
+}
+.c .mainR .mRt .mRtt .mRttf .cxg{
+    /* margin-left: 20px; */
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttf .cxg span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttf .cxgo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttf .cxgo .cxgoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttf .cxgo .cxgoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttf .cxgo .cxgoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttf .cxgo .cxgot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttf .cxgo .cxgot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经新股结束 */
+/* 财经新闻开始 */
+.c .mainR .mRt .mRtt .mRttf .cxw{
+    margin-left: 20px;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttf .cxw span{
+    display: inline-block;
+    width: 90px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttf .cxwo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttf .cxwo .cxwoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttf .cxwo .cxwoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttf .cxwo .cxwoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttf .cxwo .cxwot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttf .cxwo .cxwot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经新闻结束 */
+/* 财经财经资讯开始 */
+.c .mainR .mRt .mRtt .mRttf .czx{
+    margin-left: 20px;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttf .czx span{
+    display: inline-block;
+    width: 120px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttf .czxo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttf .czxo .czxoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttf .czxo .czxoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttf .czxo .czxoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttf .czxo .czxot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttf .czxo .czxot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经财经资讯结束 */
+/* 财经外汇开始 */
+.c .mainR .mRt .mRtt .mRttfi{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 120px;
+    margin-top: 20px;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwh{
+    /* margin-left: 20px; */
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwh span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwho{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwho .cwhoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwho .cwhoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwho .cwhoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttfi .cwho .cwhot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttfi .cwho .cwhot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经外汇结束 */
+/* 财经股票开始 */
+.c .mainR .mRt .mRtt .mRttfi .cgp{
+    margin-left: 20px;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgp span{
+    display: inline-block;
+    width: 90px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgpo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgpo .cgpoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgpo .cgpoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgpo .cgpoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttfi .cgpo .cgpot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgpo .cgpot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经股票结束 */
+
+/* 最终页面正文开始 */
+.c .mainR .mRt .mRtth{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 257px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+}
+.c .mainR .mRt .mRtth .azw{
+    text-align: center;
+}
+.c .mainR .mRt .mRtth .azw span{
+    display: inline-block;
+    width: 125px;
+    line-height: 257px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtth .azwo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtth .azwo:last-child{
+    position: relative;
+    top: -122px;
+    left: 105px;
+}
+.c .mainR .mRt .mRtth .azwo .azwoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtth .azwo .azwoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtth .azwo .azwoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtth .azwo .azwot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtth .azwo .azwot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 最终页面正文结束 */
+
+/* 股票开始 */
+/* 股票首页开始 */
+.c .mainR .mRt .con .qgp{
+    display: none;
+}
+.c .mainR .mRt .con .qgp.ac{
+    display: block;
+}
+.c .mainR .mRt .con .qgp .qgpo{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 122px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+}
+.c .mainR .mRt .con .qgp .qgpo .gs{
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpo .gs span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 股票首页结束 */
+/* 股票个股资讯开始 */
+.c .mainR .mRt .con .qgp .qgpt{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 122px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+}
+.c .mainR .mRt .con .qgp .qgpt .gzx{
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpt .gzx span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpt .gzxo{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qgp .qgpt .gzxo .gzxoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qgp .qgpt .gzxo .gzxoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qgp .qgpt .gzxo .gzxoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qgp .qgpt .gzxo .gzxot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qgp .qgpt .gzxo .gzxot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 股票个股资讯结束 */
+/* 股票大盘评述开始 */
+.c .mainR .mRt .con .qgp .qgpt .gdp{
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpt .gdp span{
+    display: inline-block;
+    width: 120px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpt .gdpo{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qgp .qgpt .gdpo .gdpoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qgp .qgpt .gdpo .gdpoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qgp .qgpt .gdpo .gdpoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qgp .qgpt .gdpo .gdpot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qgp .qgpt .gdpo .gdpot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 股票大盘评述结束 */
+/* 股票市场数据开始 */
+.c .mainR .mRt .con .qgp .qgpt .gsc{
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpt .gsc span{
+    display: inline-block;
+    width: 120px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpt .gsco{
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qgp .qgpt .gsco .gscoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qgp .qgpt .gsco .gscoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qgp .qgpt .gsco .gscoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qgp .qgpt .gsco .gscot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qgp .qgpt .gsco .gscot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 股票市场数据结束 */
+/* 股票结束 */
+
+/* 外汇开始 */
+/* 外汇首页开始 */
+.c .mainR .mRt .con .qwh{
+    display: none;
+}
+.c .mainR .mRt .con .qwh.ac{
+    display: block;
+}
+.c .mainR .mRt .con .qwh .qwho{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 122px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+}
+.c .mainR .mRt .con .qwh .qwho .ws{
+    text-align: center;
+}
+.c .mainR .mRt .con .qwh .qwho .ws span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qwh .qwho .wso{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qwh .qwho .wso .wsoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qwh .qwho .wso .wsoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qwh .qwho .wso .wsoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qwh .qwho .wso .wsot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qwh .qwho .wso .wsot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 外汇首页结束 */
+/* 外汇要闻开始 */
+.c .mainR .mRt .con .qwh .qwht{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 122px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* overflow: auto; */
+}
+.c .mainR .mRt .con .qwh .qwht .wyw{
+    text-align: center;
+}
+.c .mainR .mRt .con .qwh .qwht .wyw span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qwh .qwht .wywo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qwh .qwht .wywo .wywoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qwh .qwht .wywo .wywoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qwh .qwht .wywo .wywoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qwh .qwht .wywo .wywot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qwh .qwht .wywo .wywot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 外汇要闻结束 */
+/* 外汇EIA开始 */
+.c .mainR .mRt .con .qwh .qwht .wkc{
+    text-align: center;
+}
+.c .mainR .mRt .con .qwh .qwht .wkc span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qwh .qwht .wkco{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qwh .qwht .wkco .wkcoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qwh .qwht .wkco .wkcoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qwh .qwht .wkco .wkcoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qwh .qwht .wkco .wkcot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qwh .qwht .wkco .wkcot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 外汇EIA结束 */
+
+/* 外汇结束 */

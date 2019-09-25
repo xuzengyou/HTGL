@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+address,
+em,
+i {
+    font-style: normal;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Microsoft YaHei', 'Heiti SC', 'tahoma', 'arial', 'Hiragino Sans GB', 'sans-serif';
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+input,
+button{
+    outline:none;
+    border: 0;  
+}
+
+a,
+img {
+    -webkit-touch-callout: none;
+}
+a:active,
+a:focus,
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: none;
+    color: #c30d23;
+    /* padding-left: 10px; */
+}
+
+
+textarea {
+    resize: none;
+    outline: 0;
+    -webkit-appearance: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: #fff
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+:focus {
+    outline: none;
+}
+.clearfix {
+    *zoom: 1
+}
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+.w{
+    width: 1000px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+/* 登录 */
+.BoxLogin{
+    position: fixed;
+    width: 530px;
+    height: 379px;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    margin: -217px 0 0 -265px;
+    z-index: 99;
+    overflow: auto;
+    border-radius: 6px;
+}
+.BoxLogin .close-us{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.BoxLogin .loginTab{
+     width: 300px;
+     height: 40px;
+     margin: auto;
+}
+.BoxLogin .loginTab ul{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #cdcdcd;
+    margin-top: 20px;
+}
+.BoxLogin .loginTab ul li{
+    float: left;
+    width: 150px;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+}
+.BoxLogin .loginTab ul li.active{
+    color: #000;
+    height: 40px;
+    border-bottom: 3px solid #c30d23;
+}
+ .err-info{
+     color: #c30d23;
+    font-size: 14px;
+    line-height: 1;
+    padding-top: 14px;
+ }
+
+.BoxLogin .loginCon{
+    width: 300px;
+    height: 250px;
+    margin: 10px auto;
+}
+.BoxLogin .loginCon .boxUser{
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.BoxLogin .loginCon .boxUser form{
+    height: 135px;
+    width: 100%;
+}
+.BoxLogin .loginCon .boxUser li {
+    height: 47px;
+    margin-top: 20px;
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .BoxLogin .loginCon .boxUser li input{
+    width: 299px;
+    font-size: 16px;
+    line-height: 45px;
+    color: #B0B0B0;
+    background: #fff;
+    vertical-align: top;
+    height: 43px;
+    padding-left: 10px;
+    float: left;
+    border-radius: 6px;
+    border: 1px #E7E7E7 solid;
+  }
+  .BoxLogin .loginCon .boxUser li input:focus {
+    border-color: #c30d23;
+    color: #191919;
+  }
+.BoxLogin .loginCon .boxMobile{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.BoxLogin .loginCon .boxMobile ul{
+     height: 135px;
+     width: 100%;
+}
+.BoxLogin .loginCon .boxMobile ul li {
+    height: 47px;
+    margin-top: 20px;
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .BoxLogin .loginCon .boxMobile ul li input:focus {
+    border-color: #c30d23;
+    color: #191919;
+  }
+ .loginCon .boxMobile ul li .user_input{
+    width: 299px;
+    font-size: 16px;
+    line-height: 45px;
+    color: #B0B0B0;
+    background: #fff;
+    vertical-align: top;
+    height: 43px;
+    padding-left: 10px;
+    float: left;
+    border-radius: 6px;
+    border: 1px #E7E7E7 solid;
+ }
+ .loginCon .boxMobile ul .dy_code .dy_input{
+    width: 180px;  
+    font-size: 16px;
+    line-height: 45px;
+    color: #B0B0B0;
+    background: #fff;
+    vertical-align: top;
+    height: 43px;
+    padding-left: 10px;
+    float: left;
+    border-radius: 6px;
+    border: 1px #E7E7E7 solid;
+ }
+ .loginCon .boxMobile ul .dy_code .dy_btn{
+    background: #c30d23;
+    color: #333;
+    pointer-events: auto;
+    width: 110px;
+    height: 45px;
+    display: block;
+    float: right;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+ }
+ .loginCon .boxMobile ul .dy_code .dy_btn:hover{
+    background:#a20014;
+ }
+  .auto-login{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    height: 16px;
+ }
+ .auto-login .radio-btn{
+    float: left;
+    cursor: pointer;
+ }
+.auto-login .radio-btn .radio-icon{
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    background: url(../img/tpjh2.png) no-repeat -116px -731px;
+ }
+ .auto-login .radio-btn .radio-icon-sel{
+    background-position:-137px -731px;
+ }
+ .auto-login .radio-btn .radio-icon input{
+     opacity: 0;
+     margin: 4px 0 0;
+ }
+
+ .auto-login .back-link{
+    float: right;
+    color: #333;
+ }
+  .auto-login .back-link:hover{
+     color: #a20014;
+ }
+ .login-btn{
+    margin-top: 22px;
+ }
+ .login-btn .login-input{
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    color: #FFF;
+    background: #c30d23;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: top;
+    border: 0;
+ }
+ .login-btn .login-input:hover{
+    background:#a20014;
+ }
+ .login-oper{
+    font-size: 14px;
+    text-align: right;
+    margin: 6px auto 0;
+    line-height: 20px;
+ }
+ .reg-link{
+   color: #333;
+ }
+ .reg-link:hover{
+    color: #c30d23;
+ }

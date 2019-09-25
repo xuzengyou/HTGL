@@ -1,0 +1,865 @@
+/* 头部开始 */
+.c{
+    width: 1920px;
+    height: 1920px;
+}
+.c .head{
+    width: 1920px;
+    line-height: 125px;
+    background-color: #046EB8;
+    vertical-align: middle;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.c .head a{
+    font-size: 24px;
+    color: #fff;
+}
+.c .head a:nth-child(1){
+    display: inline-block;
+    width: 300px;
+    height: 45px;
+    margin-left: 20px;
+    position: relative;
+    top: -5px;
+}
+.c .head a:nth-child(1) img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.c .head a:nth-child(2){
+    margin-left: 20px;
+    margin-right: 1000px;
+}
+.c .head a:nth-child(3){
+    margin-right: 20px;
+}
+/* 头部结束 */
+.c .main{
+    width: 1920px;
+    display: flex;
+}
+/* 主题左边开始 */
+.c .main .mainL{
+    width: 170px;
+    height: 1300px;
+    /* background-color: antiquewhite; */
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+    position: fixed;
+    top: 130px;
+}
+/* 主题左边第一部分 */
+.c .main .mainL .mLo{
+    width: 170px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.c .main .mainL .mLo span{
+    cursor: pointer;
+    font-size: 18px;
+}
+.c .main .mainL .mLo .mLoo{
+    width: 170px;
+}
+.c .main .mainL .mLo .mLoo span:first-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #000;
+    margin-right: 10px;
+}
+.c .main .mainL .mLo .mLoo span.ac{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    left: -2px;
+}
+.c .main .mainL .mLo .mLot{
+    margin-left: 30px;
+    display: none;
+}
+.c .main .mainL .mLo .mLot p{
+    margin: 0;
+    line-height: 35px;
+}
+.c .main .mainL .mLo .mLot p a{
+    font-size: 18px;
+}
+/* 主题左边第二部分 */
+.c .main .mainL .mLt{
+    width: 170px;
+    margin-left: 20px;
+}
+.c .main .mainL .mLt span{
+    cursor: pointer;
+    font-size: 18px;
+}
+.c .main .mainL .mLt .mLto{
+    width: 170px;
+}
+.c .main .mainL .mLt .mLto span:first-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #000;
+    margin-right: 10px;
+}
+.c .main .mainL .mLt .mLto span.ac{
+    
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #000;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    left: -2px;
+}
+.c .main .mainL .mLt .mLtt{
+    margin-left: 30px;
+    display: none;
+}
+.c .main .mainL .mLt .mLtt p{
+    margin: 0;
+    line-height: 35px;
+}
+.c .main .mainL .mLt .mLtt p a{
+    font-size: 18px;
+}
+/* 主体右边开始 */
+.c .mainR{
+    width: 1750px;
+    margin-left: 200px;
+    margin-top: 130px;
+}
+/* 主体右边第一部分开始 */
+.c .mainR .mRo{
+    width: 1700px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.c .mainR .mRo .mRoo a{
+    font-size: 16px;
+}
+.c .mainR .mRo .mRoo span{
+    font-size: 16px;
+}
+.c .mainR .mRo .mRot{
+    margin-top: 15px;
+}
+.c .mainR .mRo .mRot:after{
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+.c .mainR .mRo .mRot div{
+    float: left;
+    border: 1px solid #ccc;
+}
+.c .mainR .mRo .mRot .mRoto{
+    width: 160px;
+    line-height: 60px;
+    text-align: center;
+}
+.c .mainR .mRo .mRot .mRott{
+    width: 1540px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+}
+.c .mainR .mRo .mRot .mRott{
+    border-left: none;
+}
+.c .mainR .mRo .mRot .mRott input{
+    padding-left: 5px;
+    width: 500px;
+}
+.c .mainR .mRo .mRoth{
+    margin-top: 20px;
+}
+.c .mainR .mRo .mRoth:after{
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+.c .mainR .mRo .mRoth>div{
+    float: left;
+    border: 1px solid #ccc;
+    height: 60px;
+}
+.c .mainR .mRo .mRoth .mRotho{
+    width: 160px;
+    line-height: 60px;
+    text-align: center;
+}
+.c .mainR .mRo .mRoth .mRotht{
+    width: 1540px;
+    border-left: none;
+    display: flex;
+    height: 60px;
+    /* justify-content: center; */
+    /* item-align: middle; */
+}
+.c .mainR .mRo .mRoth .mRotht>div{
+    width: 160px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* text-align: center; */
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.c .mainR .mRo .mRoth .mRotht>div span{
+    display: inline-block;
+    line-height: 38px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.c .mainR .mRo .mRoth .mRotht>div span:first-child{
+    width: 100px;
+    background-color: #ccc;
+    color: #fff;
+    text-align: center;
+}
+.c .mainR .mRo .mRoth .mRotht>div span.ac{
+    width: 100px;
+    background-color: #60B878;
+    color: #fff;
+    display: inline-block;
+}
+.c .mainR .mRo .mRoth .mRotht>div span:last-child{
+    width: 55px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #60B878;
+    text-align: center;
+    display: none;
+}
+.c .mainR .mRo .mRoth .mRotht>div span.ab{
+    display: inline-block;
+}
+.c .mainR .mRo .mRof{
+    margin-top: 20px;
+}
+.c .mainR .mRo .mRof:after{
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+.c .mainR .mRo .mRof>div{
+    float: left;
+    border: 1px solid #ccc;
+    height: 60px;
+}
+.c .mainR .mRo .mRof .mRofo{
+    width: 160px;
+    line-height: 60px;
+    text-align: center;
+}
+.c .mainR .mRo .mRof .slt{
+    width: 130px;
+    height: 80px;
+    margin-left: 20px;
+    border: none;
+    overflow: hidden;
+}
+.c .mainR .mRo .mRof .slt img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.c .mainR .mRo .mRof .mRoft{
+    width: 640px;
+    line-height: 60px;
+    border-left: none;
+    display: flex;
+}
+.c .mainR .mRo .mRof .mRoft input:nth-child(1){
+    border: 1px solid #ccc;
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 5px;
+    padding-left: 5px;
+    overflow: hidden;
+}
+.c .mainR .mRo .mRof .mRoft input:nth-child(2){
+    border: 1px solid #ccc;
+    width: 130px;
+    height: 40px;
+    margin-top: 10px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+
+}
+.c .mainR .mRo .mRof .mRoft span{
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    background-color: #C20E22;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    /* vertical-align: middle; */
+    cursor: pointer;
+    position: relative;
+    /* top: 10px; */
+    left: -120px;
+    z-index: -1;
+
+}
+.c .mainR .mRo .mRof .mRoft a{
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    background-color: #046EB8;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    /* position: relative;
+    left: -110px; */
+}
+.c .mainR .mRo .mRofi{
+    display: flex;
+    margin-top: 20px;
+    line-height: 60px;
+}
+.c .mainR .mRo .mRofi .mRofio{
+    width: 160px;
+    height: 60px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.c .mainR .mRo .mRofi .mRofit{
+    width: 160px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-left: 10px;
+}
+.c .mainR .mRo .mRofi .mRofit span:last-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.c .mainR .mRo .mRofi .mRofit span.ac{
+    transform: rotate(180deg);
+    transition: all .6s;
+}
+.c .mainR .mRo .mRofi .mRofith{
+    width: 160px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-left: 15px;
+}
+.c .mainR .mRo .mRofi .mRofit span{
+    cursor: pointer;
+}
+.c .mainR .mRo .mRofi .mRofit span:first-child{
+    display: inline-block;
+    width: 96px;
+    height: 21px;
+    text-align: center;
+}
+.c .mainR .mRo .mRofi .mRofith span:last-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.c .mainR .mRo .mRofi .mRofith span{
+    cursor: pointer;
+}
+.c .mainR .mRo .mRofi .mRofith span:first-child{
+    display: inline-block;
+    width: 96px;
+    height: 21px;
+    text-align: center;
+}
+.c .mainR .mRo .mRofi .mRofith span.ac{
+    transform: rotate(180deg);
+    transition: all .6s;
+}
+.c .mainR .mRo .mRofi .c1 .zlb{
+    width: 160px;
+    height: 90px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 10px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+
+}
+.c .mainR .mRo .mRofi .c1 .zlb>div:hover{
+    background-color: #F2F2F2;
+}
+.c .mainR .mRo .mRofi .c1 .zlb>div{
+    padding-left: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+.c .mainR .mRo .mRofi .c1 .zlb>div:last-child{
+    border-bottom:none;
+}
+.c .mainR .mRo .mRofi .c1 .zlb>div span{
+    display: inline-block;
+    width: 130px;
+    line-height: 35px;
+    cursor: pointer;
+}
+.c .mainR .mRo .mRofi .c2 .flb{
+    width: 160px;
+    height: 90px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 15px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+}
+.c .mainR .mRo .mRofi .c2 .flb>div:hover{
+    background-color: #F2F2F2;
+}
+.c .mainR .mRo .mRofi .c2 .flb>div{
+    padding-left: 20px;
+    border-bottom: 1px dashed #ccc;
+
+}
+.c .mainR .mRo .mRofi .c2 .flb>div:last-child{
+    border-bottom:none;
+}
+.c .mainR .mRo .mRofi .c2 .flb>div span{
+    display: inline-block;
+    width: 130px;
+    line-height: 35px;
+    cursor: pointer;
+}
+/* 主体站内选择部分 */
+.c .mainR .zn{
+    width: 1700px;
+    display: flex;
+    margin-top: 10px;
+    display: none;
+    margin-bottom: 20px;
+}
+.c .mainR .zn.ac{
+    display: block;
+    display: flex;
+}
+.c .mainR .zn .zNl{
+    width: 350px;
+    /* height: 300px;
+    overflow-y: scroll;*/
+    border: 1px solid #ccc; 
+    /* border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; */
+}
+.c .mainR .zn .zNr{
+    width: 800px;
+    border: 1px solid #ccc;
+    /* border-left: none; */
+    margin-left: 5px;
+}
+.c .mainR .zn .zNl .zNlo p{
+    line-height: 35px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.c .mainR .zn .zNl .zNlo p:first-child{
+    background-color: #A9DDFF;
+    font-size: 18px;
+}
+.c .mainR .zn .zNl .zNlo p:last-child{
+    border-bottom: 1px dashed #ccc;
+}
+.c .mainR .zn .zNl .zNlt{
+    width: 350px;
+    height: 230px;
+    overflow-y: scroll;
+}
+.c .mainR .zn .zNl .zNlt ul li{
+    line-height: 35px;
+    border-bottom: 1px dashed #ccc;
+}
+.c .mainR .zn .zNl .zNlt ul li.gg{
+    background-color: #dcdcdc;
+}
+.c .mainR .zn .zNl .zNlt ul li span{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.c .mainR .zn .zNl .zNlt ul li span:first-child{
+    display: inline-block;
+    background-image:url(../../../img/tpjh.png);
+    background-repeat: no-repeat;
+    background-position: -290px -748px;
+    width: 79px;
+    height: 54px
+}
+.c .mainR .zn .zNl .zNlth{
+    width: 350px;
+    height: 80px;
+    border-top: 1px solid #ccc;
+}
+.c .mainR .zn .zNl .zNlth span{
+    display: inline-block;
+    width: 110px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #ccc;
+    cursor: pointer;
+    margin-left: 40px;
+    border-radius: 3px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.c .mainR .zn .zNl .zNlth input{
+    border: 1px solid #ccc;
+    margin-bottom: 4px;
+    width: 300px;
+    line-height: 30px;
+    margin-left: 22px;
+    border-radius: 3px;
+    padding-left: 5px;
+}
+.c .mainR .zn .zNr{
+    display: none;
+}
+.c .mainR .zn .zNr.ac{
+    display: block;
+}
+.c .mainR .zn .zNr .zNro{
+    width: 800px;
+    height: 302px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.c .mainR .zn .zNr .zNro table{
+    width: 800px;
+    text-align: center;
+    line-height: 46px;
+}
+.c .mainR .zn .zNr .zNro table thead{
+    background-color: #A9DDFF;
+    line-height: 35px;
+}
+
+.c .mainR .zn .zNr .zNro table tbody tr td:first-child input{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.c .mainR .zn .zNr .zNro table tbody tr{
+    border-bottom: 1px dashed #ccc;
+}
+.c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span:first-child{
+    background-image:url(../../../img/tpjh.png);
+    background-repeat: no-repeat;
+    background-position: -247px -753px;
+    width: 45px;
+    height: 45px
+}
+.c .mainR .zn .zNr .zNrt{
+    width: 800px;
+    border-top: 1px solid #ccc;
+    /* display: flex; */
+    height: 80px;
+}
+.c .mainR .zn .zNr .zNrt .zNrto{
+    margin-left: 130px;
+    margin-top: 5px;
+}
+/* 引入分页 */
+.m-style {
+    position: relative;
+    text-align: center;
+    zoom: 1;
+}
+
+.m-style:before,
+.m-style:after {
+    content: "";
+    display: table;
+}
+
+.m-style:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.m-style span {
+    float: left;
+    margin: 0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+.m-style .active {
+    float: left;
+    margin: 0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background: #046EB8;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #046EB8;
+}
+
+.m-style a {
+    float: left;
+    margin: 0 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+.m-style a:hover {
+    color: #fff;
+    background: #046EB8;
+}
+
+.m-style .next,
+.m-style .prev {
+    font-family: "Simsun";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.now,
+.count {
+    padding: 0 5px;
+    color: #046EB8;
+}
+/* 引入分页结束 */
+.c .mainR .zn .zNr .zNrt .zNrtt{
+    display: flex;
+    vertical-align: middle;
+    line-height: 30px;
+    margin-top: 2px;
+}
+.c .mainR .zn .zNr .zNrt .zNrtt span:first-child{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 40px;
+    height: 30px;
+}
+.c .mainR .zn .zNr .zNrt .zNrtt input{
+    vertical-align: middle;
+    width: 215px;
+}
+.c .mainR .zn .zNr .zNrt .zNrtt span:last-child{
+    display: inline-block;
+    width: 80px;
+    line-height: 30px;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-left: 10px;
+}
+
+.c .mainR .zn .zNr .yulan{
+    width: 180px;
+    height: 120px;
+    background-color: aqua;
+    position: absolute;
+    top: 440px;
+    left: 794px;
+    display: none;
+}
+.c .mainR .zn .zNr .yulan.xs{
+    display: block;
+}
+.c .mainR .zn .zNr .yulan img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 主体右边第二部分 */
+.c .mainR .mRt{
+    width: 1700px;
+}
+.c .mainR .mRt .mRto{
+    width: 1700px;
+    height: 80px;
+    background-color: #ccc;
+    padding-left: 25px;
+    padding-top: 20px;
+}
+.c .mainR .mRt .mRto span{
+    font-size: 24px;
+    display: block;
+    /* font-weight: bold; */
+}
+.c .mainR .mRt .mRtt{
+    width: 1700px;
+    height: 500px;
+    border: 1px solid #ccc;
+}
+.c .mainR .mRt .mRtt form textarea{
+    resize: none;
+}
+.c .mainR .mRt .mRtth{
+    margin-top: 10px;
+    width: 1700px;
+    height: 60px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+.c .mainR .mRt .mRtth .mRttho{
+    margin-left: 15px;
+}
+.c .mainR .mRt .mRtth .mRttho span{
+    font-size: 24px;
+    display: inline-block;
+}
+.c .mainR .mRt .mRtth .mRttho span:last-child{
+    width: 110px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+}
+.c .mainR .mRt .mRtth .mRttht{
+    display: flex;
+    margin-left: 80px;
+    font-size: 24px;
+}
+.c .mainR .mRt .mRtth .mRttht .mRtthtt{
+    margin-left: 10px;
+}
+.c .mainR .mRt .mRtth .mRttht .mRtthtt .mr{
+    border: 1px solid #ccc;
+    width: 145px;
+    line-height: 35px;
+}
+.c .mainR .mRt .mRtth .mRttht .mRtthtt .mr span:first-child{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtth .mRttht .mRtthtt .mr span:last-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #ccc;
+    margin-left: 25px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtth .mRtthth{
+    margin-left: 80px;
+    font-size: 24px;
+}
+.c .mainR .mRt .mRtth .mRtthth span{
+    display: inline-block;
+    margin-right: 10px;
+}
+.c .mainR .mRt .mRtth .mRtthth span:last-child{
+    width: 260px;
+    height: 35px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.c .mainR .mRt .mRtf{
+    margin-top: 20px;
+}
+.c .mainR .mRt .mRtf button{
+    display: inline-block;
+    width: 160px;
+    height: 80px;
+    background-color: #046EB8;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
