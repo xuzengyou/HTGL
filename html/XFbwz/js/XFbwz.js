@@ -1,4 +1,55 @@
 $(function(){
+    //页面打开根据id发请求
+    // window.location.search;
+    // console.log(window.location.search.split("?")[1].split("&"));
+    // var id=window.location.search.split("?")[1].split("=")[1];
+    // console.log(id);
+
+    //加粗
+    $("span.jiac").click(function(){
+        // $("input.")
+    });
+    
+    var aid=null,articleId,sortId,title,
+    intro,authorImg=null,author,copyfrom,
+    inputer=null,httpUrl,keyword=null,hits=null,
+    postNum=null,ontop=null,iselite=null,deleted=null,
+    addTime=null,updateTime=getNowFormatDate(),createTime=null,
+    lastPost=null,ownerTag=null,ownerRemark=null,htmlPath=null,
+    filesPath=null,tempPath=null,thumb,htmlStatus=null,
+    articleStatus=null,tableName=null,content;
+    
+                
+    //点击发布文章
+    $("button.fb").click(function(){
+        // console.log(record);
+        // console.log($("input.wzbt").val());
+        // console.log(editor.html());
+
+        title=$("input.wzbt").val(),
+        articleId=null,sortId=null,intro=null,author=null,copyfrom=null,
+        httpUrl=null,content=editor.html();
+    
+        var record=JSON.stringify({
+            aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
+            lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
+        });
+        console.log(record)
+        $.ajax({
+            type:"post",
+            url:"http://192.168.0.171:8080/WSHD/jiekou6/Create",
+            dataType:"json",
+            contentType:"application/json;charset=UTF-8",
+            data:record,
+            success:function(res){
+                alert("发布成功");
+                // window.location.href="../Wzlb/Wzlb.html"
+            }
+        })
+
+    });
+
+           
     
 
 
@@ -28,7 +79,8 @@ $(function(){
                 }
             }else{
                 console.log("出错啦")
-            }
+            };
+
             //点击文件夹获取相应图片
             $("div.zNlt ul li span").click(function(){
                 $("div.zNr").addClass("ac");
@@ -57,24 +109,71 @@ $(function(){
                                         html+="<input type=checkbox>";
                                     html+="</td>";
                                     html+="<td>";
-                                        html+="<span data-cls="+res.data[i].imageUrl+"></span>";
-                                        html+="<span>"+res.data[i].imageName+"</span>";
+                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+"></span>";
+                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+">"+res.data[i].imageName+"</span>";
                                     html+="</td>";
                                     html+="<td>"+res.data[i].imageSize+"k"+"</td>";
                                     html+="<td>"+res.data[i].imageTime+"</td>";
                                 html+="</tr>";
                             }
                             $("div.zNro table tbody").html(html);
+
                             //点击图片预览`消失
-                            $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span:first-child").click(function(){
+                            $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span").click(function(){
                                 $("div.yulan").addClass("xs");
                                 $(".shixiao").attr("src",$(this).attr("data-cls"));
-                                // console.log($(this).attr("data-cls"))
+                                
                             });
                             $(".shixiao").click(function(event){
                                 $(this).parent().removeClass("xs")
                             });
-                            console.log(res.sum)
+
+                            //点击对勾选中对应图片
+                            var folde,filename;
+                            $(".c .mainR .zn .zNr .zNro table tbody tr td:first-child input").click(function(){
+                                if($(this).parent().parent().hasClass("ac")){
+                                    $(this).parent().parent().removeClass("ac");
+                                    $(this).attr('checked',false)
+                                }else{
+                                    $(this).parent().parent().addClass("ac");
+                                    $(this).attr('checked',true)
+                                };
+                                folde=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
+                                filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
+                            });
+            
+                            //点击删除图片
+                            $("span.shanc").click(function(){
+                                $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                console.log(folde+filename);
+                                $.ajax({
+                                    type:"post",
+                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                    dataType:"JSON",
+                                    data:{
+                                        folder:folde,
+                                        filename:filename
+                                    },
+                                    success:function(){
+                                        alert("删除图片成功")
+                                    }
+                                });
+                            });
+                            // 点击上传图片
+                            $("span.shangch").click(function(){
+                                thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                
+                                var ac=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:first-child input").is(":checked");
+                                console.log(ac)
+                                if(ac){
+                                    $(this).addClass("ac");
+                                    $(this).html("上传成功");
+                                    $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                }else{
+                                    alert("请选择图片")
+                                }
+                            });
+                            //分页第二页开始
                             $('.M-box11').pagination({
                                 totalData: res.sum,
                                 showData: res.data.length,
@@ -101,8 +200,8 @@ $(function(){
                                                         html+="<input type=checkbox>";
                                                     html+="</td>";
                                                     html+="<td>";
-                                                        html+="<span data-cls="+res.data[i].imageUrl+"></span>";
-                                                        html+="<span>"+res.data[i].imageName+"</span>";
+                                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+"></span>";
+                                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+">"+res.data[i].imageName+"</span>";
                                                     html+="</td>";
                                                     html+="<td>"+res.data[i].imageSize+"k"+"</td>";
                                                     html+="<td>"+res.data[i].imageTime+"</td>";
@@ -110,27 +209,113 @@ $(function(){
                                             }
                                             $("div.zNro table tbody").html(html);
                                             //点击图片预览`消失
-                                            $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span:first-child").click(function(){
+                                            $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span").click(function(){
                                                 $("div.yulan").addClass("xs");
                                                 $(".shixiao").attr("src",$(this).attr("data-cls"));
-                                                // alert(132)
-                                                // console.log($(this).attr("data-cls"))
+                                                
                                             });
                                             $(".shixiao").click(function(event){
                                                 $(this).parent().removeClass("xs")
                                             });
+                                            //点击对勾选中对应图片
+                                            var folde,filename;
+                                            $(".c .mainR .zn .zNr .zNro table tbody tr td:first-child input").click(function(){
+                                                if($(this).parent().parent().hasClass("ac")){
+                                                    $(this).parent().parent().removeClass("ac");
+                                                    $(this).attr('checked',false)
+                                                }else{
+                                                    $(this).parent().parent().addClass("ac");
+                                                    $(this).attr('checked',true)
+                                                };
+                                                folde=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
+                                                filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
+                                            });
+                                            //点击删除图片
+                                            $("span.shanc").click(function(){
+                                                $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                                console.log(folde+filename);
+                                                $.ajax({
+                                                    type:"post",
+                                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                                    dataType:"JSON",
+                                                    data:{
+                                                        folder:folde,
+                                                        filename:filename
+                                                    },
+                                                    success:function(){
+                                                        alert("删除图片成功")
+                                                    }
+                                                });
+                                            });
+                                            // 点击上传图片
+                                            $("span.shangch").click(function(){
+                                                thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                                
+                                                var ac=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:first-child input").is(":checked");
+                                                console.log(ac)
+                                                if(ac){
+                                                    $(this).addClass("ac");
+                                                    $(this).html("上传成功");
+                                                    $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                                }else{
+                                                    alert("请选择图片")
+                                                }
+                                            });
+
 
                                         }
                                     });
                                 }
                             })
-            
+    
                         }
                     });
                 }
                 loadData(1);
+                
 
 
+            });
+            //点击新建文件夹
+            $("span.New").click(function(){
+                                
+                var fold=$("input.wjjsc").val().trim();
+                if(fold){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou7/insertFolder",
+                        dataType:"JSON",
+                        data:{
+                            newFile:fold
+                        },
+                        success:function(res){
+                            alert(res.data);
+                            $("input.wjjsc").val("");
+                        }
+                    })
+                }
+            });
+            //点击删除文件夹
+            $("span.Dle").click(function(){
+                var newFile=$("input.wjjsc").val().trim();
+
+                $.ajax({
+                    type:"post",
+                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteFolder",
+                    dataType:"JSON",
+                    data:{
+                        folder:newFile
+                    },
+                    success:function(res){
+                        if(res.code==200){
+                            alert("删除成功");
+                            $("input.wjjsc").val("");
+                        }else{
+                            alert("删除失败,请输入正确的文件夹名称");
+                            $("input.wjjsc").val("");
+                        }
+                    }
+                })
 
             });
             
@@ -357,10 +542,6 @@ $(function(){
         });
 
 
-
-
-
-
         //获取当前时间
         function getNowFormatDate(){
             var date = new Date();
@@ -396,6 +577,7 @@ $(function(){
             window.sessionStorage.clear();
         });
 
+        
 
 
 

@@ -23,7 +23,7 @@
     </div>
     <div class="login">
         <h1>管理员登录</h1><br>
-        <input type="text" placeholder="请输入用户名" autofocus="autofocus" value="WSHD"><br>
+        <input type="text" placeholder="请输入用户名" autofocus="autofocus"><br>
         <input type="password" name="" id="" placeholder="请输入用户密码"><br>
         <button type="button">登录</button>
     </div>
@@ -35,14 +35,28 @@
                 var userName=$("input[type=text]").val().trim();
                 var passWord=$("input[type=password]").val();
                 console.log(userName+passWord);
+
+                window.sessionStorage.setItem("username",userName);
+                window.sessionStorage.setItem("password",passWord);
                 
-                if(userName=="WSHD"&&passWord=="WSHD"){
-                window.location.href="./html/Wzlb/Wzlb.html";
-                window.sessionStorage.setItem("userName",userName);
-                window.sessionStorage.setItem("passWord",passWord);
-                }else{
-                    alert("用户名或密码不正确");
-                }
+                $.ajax({
+                    type:"post",
+                    url:"http://192.168.0.171:8080/WSHD/login",
+                    dataType:"JSON",
+                    data:{
+                        username:userName,
+                        password:passWord,
+                        remember:true
+                    },
+                    success:function(res){
+                        console.log(132)
+                        if(res.code==200){
+                            window.location.href="./html/Wzlb/Wzlb.html";
+                        }else{
+                            alert(res.data)
+                        }
+                    }
+                });
             });
             //键盘抬起事件
             $("input[type=password]").keyup(function(e){
@@ -50,14 +64,29 @@
                     var userName=$("input[type=text]").val().trim();
                     var passWord=$("input[type=password]").val();
                     console.log(userName+passWord);
+
+                    window.sessionStorage.setItem("username","userName");
+                    window.sessionStorage.setItem("password","passWord");
                     
-                    if(userName=="WSHD"&&passWord=="WSHD"){
-                        window.location.href="./html/Wzlb/Wzlb.html";
-                        window.sessionStorage.setItem("userName",userName);
-                        window.sessionStorage.setItem("passWord",passWord);
-                    }else{
-                        alert("用户名或密码不正确");
-                    }
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/login",
+                        dataType:"JSON",
+                        data:{
+                            username:userName,
+                            password:passWord,
+                            remember:true
+                        },
+                        success:function(res){
+                            if(res.code==200){
+                                window.location.href="./html/Wzlb/Wzlb.html";
+                                window.sessionStorage.setItem("username",userName);
+                                window.sessionStorage.setItem("password",passWord);
+                            }else{
+                                alert("用户名或者密码错误")
+                            }
+                        }
+                    });
                 }
             });
 

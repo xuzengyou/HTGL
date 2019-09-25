@@ -4,9 +4,11 @@ $(function(){
     console.log(window.location.search.split("?")[1].split("&"));
     var id=window.location.search.split("?")[1].split("=")[1];
     // console.log(id);
+
+    //加粗
     $("span.jiac").click(function(){
-        $("input.")
-    })
+        // $("input.")
+    });
     
     var aid=id,articleId,sortId,title,
     intro,authorImg=null,author,copyfrom,
@@ -52,8 +54,8 @@ $(function(){
                         contentType:"application/json;charset=UTF-8",
                         data:record,
                         success:function(res){
-                            console.log("发布成功啦");
-
+                            alert("发布成功");
+                            window.location.href="../Wzlb/Wzlb.html"
                         }
                     })
 
@@ -95,7 +97,8 @@ $(function(){
                 }
             }else{
                 console.log("出错啦")
-            }
+            };
+
             //点击文件夹获取相应图片
             $("div.zNlt ul li span").click(function(){
                 $("div.zNr").addClass("ac");
@@ -132,6 +135,7 @@ $(function(){
                                 html+="</tr>";
                             }
                             $("div.zNro table tbody").html(html);
+
                             //点击图片预览`消失
                             $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span").click(function(){
                                 $("div.yulan").addClass("xs");
@@ -141,47 +145,53 @@ $(function(){
                             $(".shixiao").click(function(event){
                                 $(this).parent().removeClass("xs")
                             });
+
                             //点击对勾选中对应图片
-                            var folder,filename;
+                            var folde,filename;
                             $(".c .mainR .zn .zNr .zNro table tbody tr td:first-child input").click(function(){
                                 if($(this).parent().parent().hasClass("ac")){
                                     $(this).parent().parent().removeClass("ac");
+                                    $(this).attr('checked',false)
                                 }else{
                                     $(this).parent().parent().addClass("ac");
+                                    $(this).attr('checked',true)
                                 };
-                                folder=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("class");
-                                filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
-                                // filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac").html();
-                                
-                            })
+                                folde=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
+                                filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
+                            });
+            
                             //点击删除图片
                             $("span.shanc").click(function(){
-                                // $(".c .mainR .zn .zNr .zNro table tbody tr.ac").remove();
-                                // var folder=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("class"),
-                                // filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
-                                // filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac").html();
-                                console.log(folder+filename);
-                                // $.ajax({
-                                //     type:"post",
-                                //     url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
-                                //     dataType:"JSON",
-                                //     data:{
-                                //         folder,
-                                //         filename
-                                //     },
-                                //     success:function(){
-                                //         console.log("删除图片成功")
-                                //     }
-                                // });
+                                $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                console.log(folde+filename);
+                                $.ajax({
+                                    type:"post",
+                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                    dataType:"JSON",
+                                    data:{
+                                        folder:folde,
+                                        filename:filename
+                                    },
+                                    success:function(){
+                                        alert("删除图片成功")
+                                    }
+                                });
                             });
-                            //点击上传图片
+                            // 点击上传图片
                             $("span.shangch").click(function(){
-                                thumb=$(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span").attr("data-cls");
-                                console.log(thumb)
+                                thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                
+                                var ac=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:first-child input").is(":checked");
+                                console.log(ac)
+                                if(ac){
+                                    $(this).addClass("ac");
+                                    $(this).html("上传成功");
+                                    $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                }else{
+                                    alert("请选择图片")
+                                }
                             });
-                            
-                            
-
+                            //分页第二页开始
                             $('.M-box11').pagination({
                                 totalData: res.sum,
                                 showData: res.data.length,
@@ -208,8 +218,8 @@ $(function(){
                                                         html+="<input type=checkbox>";
                                                     html+="</td>";
                                                     html+="<td>";
-                                                        html+="<span data-cls="+res.data[i].imageUrl+"></span>";
-                                                        html+="<span>"+res.data[i].imageName+"</span>";
+                                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+"></span>";
+                                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+">"+res.data[i].imageName+"</span>";
                                                     html+="</td>";
                                                     html+="<td>"+res.data[i].imageSize+"k"+"</td>";
                                                     html+="<td>"+res.data[i].imageTime+"</td>";
@@ -217,27 +227,119 @@ $(function(){
                                             }
                                             $("div.zNro table tbody").html(html);
                                             //点击图片预览`消失
-                                            $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span:first-child").click(function(){
+                                            $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span").click(function(){
                                                 $("div.yulan").addClass("xs");
                                                 $(".shixiao").attr("src",$(this).attr("data-cls"));
-                                                // alert(132)
-                                                // console.log($(this).attr("data-cls"))
+                                                
                                             });
                                             $(".shixiao").click(function(event){
                                                 $(this).parent().removeClass("xs")
                                             });
+                                            //点击对勾选中对应图片
+                                            var folde,filename;
+                                            $(".c .mainR .zn .zNr .zNro table tbody tr td:first-child input").click(function(){
+                                                if($(this).parent().parent().hasClass("ac")){
+                                                    $(this).parent().parent().removeClass("ac");
+                                                    $(this).attr('checked',false)
+                                                }else{
+                                                    $(this).parent().parent().addClass("ac");
+                                                    $(this).attr('checked',true)
+                                                };
+                                                folde=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
+                                                filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
+                                            });
+                                            //点击删除图片
+                                            $("span.shanc").click(function(){
+                                                $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                                console.log(folde+filename);
+                                                $.ajax({
+                                                    type:"post",
+                                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                                    dataType:"JSON",
+                                                    data:{
+                                                        folder:folde,
+                                                        filename:filename
+                                                    },
+                                                    success:function(){
+                                                        alert("删除图片成功")
+                                                    }
+                                                });
+                                            });
+                                            // 点击上传图片
+                                            $("span.shangch").click(function(){
+                                                thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                                
+                                                var ac=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:first-child input").is(":checked");
+                                                console.log(ac)
+                                                if(ac){
+                                                    $(this).addClass("ac");
+                                                    $(this).html("上传成功");
+                                                    $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
+                                                }else{
+                                                    alert("请选择图片")
+                                                }
+                                            });
+
 
                                         }
                                     });
                                 }
                             })
-            
+    
                         }
                     });
                 }
                 loadData(1);
+                
 
 
+            });
+            //点击新建文件夹
+            $("span.New").click(function(){
+                                
+                var fold=$("input.wjjsc").val().trim();
+                if(fold){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou7/insertFolder",
+                        dataType:"JSON",
+                        data:{
+                            newFile:fold
+                        },
+                        success:function(res){
+                            if(res.code==200){
+                                alert(res.data);
+                                $("input.wjjsc").val("");
+                            }else{
+                                alert("请输入文件夹名称");
+                                $("input.wjjsc").val("");
+                            }
+                            
+                        }
+                    })
+                }
+            });
+            //点击删除文件夹
+            $("span.Dle").click(function(){
+                var newFile=$("input.wjjsc").val().trim();
+
+                $.ajax({
+                    type:"post",
+                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteFolder",
+                    dataType:"JSON",
+                    data:{
+                        folder:newFile
+                    },
+                    success:function(res){
+                        if(res.code==200){
+                            alert("删除成功");
+                            $("input.wjjsc").val("");
+                        }else{
+                            alert("删除失败,请输入正确的文件夹名称");
+                            $("input.wjjsc").val("");
+                        }
+                    }
+                })
 
             });
             

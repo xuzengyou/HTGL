@@ -719,12 +719,22 @@
 }
 .c .mainR .zn .zNr .zNrt .zNrtt span:nth-child(4){
     display: inline-block;
-    width: 80px;
+    width: 170px;
     line-height: 30px;
     background-color: #ccc;
     border-radius: 3px;
     text-align: center;
     cursor: pointer;
+    margin-top: 1px;
+    margin-left: 15px;
+}
+.c .mainR .zn .zNr .zNrt .zNrtt span.ac{
+    display: inline-block;
+    width: 170px;
+    background-color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    cursor: text;
     margin-top: 1px;
     margin-left: 15px;
 }

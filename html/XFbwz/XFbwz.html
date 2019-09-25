@@ -13,7 +13,7 @@
     <!-- 引入jq -->
     <script src="../../js/lib/jquery-3.3.1.min.js"></script>
     <!-- 引入js -->
-    <script type="text/javascript" src="./js/XFbwz.js"></script>
+    <script src="./js/XFbwz.js"></script>
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="./css/XFbwz.css">
@@ -91,7 +91,7 @@
                                 <span>首页</span><span>√</span>
                             </div>
                             <div class="mRothtt">
-                                <span>加粗</span><span>√</span>
+                                <span class="jiac">加粗</span><span>√</span>
                             </div>
                             <div class="mRothtth">
                                 <span>图片</span><span>√</span>
@@ -185,9 +185,9 @@
                             </ul>
                         </div>
                         <div class="zNlth">
-                            <span>新建文件夹</span>
-                            <span>删除文件夹</span>
-                            <input type="text" placeholder="请输入新建或者要删除的文件夹名称..." autofocus>
+                            <span class="New">新建文件夹</span>
+                            <span class="Dle">删除文件夹</span>
+                            <input type="text" placeholder="请输入新建或者要删除的文件夹名称..." autofocus class="wjjsc">
                         </div>
                     </div>
                     <div class="zNr">
@@ -280,6 +280,7 @@
                                 <span>上传:</span>
                                 <input type="file" class="shangc">
                                 <span class="shanc">删除图片</span>
+                                <span class="shangch">点击确定要上传图片</span>
                             </div>
                         </div>
                         <div class="yulan">
@@ -353,7 +354,7 @@
                 allowFileManager : true
             });
             K('input[name=getHtml]').click(function(e) {
-                // alert(editor.html());
+                alert(editor.html());
                 // console.log(123);
                 //轮播图下方新闻
                 // $.ajax({
@@ -384,12 +385,7 @@
                 // });
 
             });
-            $("button.fb").click(function(){
-                console.log(777);
-                console.log(editor.html())
-
-
-            });
+            
 
 
 
