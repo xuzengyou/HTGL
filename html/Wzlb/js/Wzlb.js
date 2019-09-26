@@ -1,4 +1,12 @@
 $(function(){
+    //获取用户名
+    var username=window.sessionStorage.getItem("username");
+    console.log(username);
+    $("a.user").html("您好"+username+"欢迎您登陆");
+    //点击退出清除内容
+    $("a.tc").click(function(){
+        window.sessionStorage.clear();
+    });
     // 点击控制菜单隐藏显示--
     $("div.mLoo span").click(function(){
         // console.log(123)
@@ -51,14 +59,7 @@ $(function(){
     });
     
     
-    //获取用户名
-    var userName=window.sessionStorage.getItem("userName");
-    console.log(userName);
-    $("a.user").html("您好"+userName+"欢迎您登陆");
-    //点击退出清除内容
-    $("a.tc").click(function(){
-        window.sessionStorage.clear();
-    });
+    
     // 分页数据
     $('.M-box11').pagination(
         {mode: 'fixed'});
@@ -113,7 +114,7 @@ $(function(){
                         url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
                         dataType:"JSON",
                         data:{
-                            id
+                            id:id
                         },
                         success:function(res){
                             console.log(res)

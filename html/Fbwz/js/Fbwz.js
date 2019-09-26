@@ -593,7 +593,7 @@ $(function(){
         $("span.shij").html(getNowFormatDate());
 
         //获取用户名
-        var userName=window.sessionStorage.getItem("userName");
+        var userName=window.sessionStorage.getItem("username");
         // console.log(userName);
         $("a.user").html("您好"+userName+"欢迎您登陆");
         //点击退出清除内容

@@ -1,9 +1,4 @@
 $(function(){
-    //页面打开根据id发请求
-    // window.location.search;
-    // console.log(window.location.search.split("?")[1].split("&"));
-    // var id=window.location.search.split("?")[1].split("=")[1];
-    // console.log(id);
 
     //加粗
     $("span.jiac").click(function(){
@@ -43,7 +38,7 @@ $(function(){
             data:record,
             success:function(res){
                 alert("发布成功");
-                // window.location.href="../Wzlb/Wzlb.html"
+                window.location.href="../Wzlb/Wzlb.html";
             }
         })
 
@@ -569,9 +564,9 @@ $(function(){
         $("span.shij").html(getNowFormatDate());
 
         //获取用户名
-        var userName=window.sessionStorage.getItem("userName");
+        var username=window.sessionStorage.getItem("username");
         // console.log(userName);
-        $("a.user").html("您好"+userName+"欢迎您登陆");
+        $("a.user").html("您好"+username+"欢迎您登陆");
         //点击退出清除内容
         $("a.tc").click(function(){
             window.sessionStorage.clear();

@@ -34,11 +34,15 @@
 
                 var userName=$("input[type=text]").val().trim();
                 var passWord=$("input[type=password]").val();
-                console.log(userName+passWord);
+                // console.log(userName+passWord);
 
-                window.sessionStorage.setItem("username",userName);
-                window.sessionStorage.setItem("password",passWord);
+                // window.sessionStorage.setItem("username",userName);
+                // window.sessionStorage.setItem("password",passWord);
                 
+                // var u=window.sessionStorage.getItem("username");
+                // var p=window.sessionStorage.getItem("password");
+                // console.log(u+p);
+
                 $.ajax({
                     type:"post",
                     url:"http://192.168.0.171:8080/WSHD/login",
@@ -49,11 +53,12 @@
                         remember:true
                     },
                     success:function(res){
-                        console.log(132)
                         if(res.code==200){
                             window.location.href="./html/Wzlb/Wzlb.html";
+                            window.sessionStorage.setItem("username",userName);
+                            window.sessionStorage.setItem("password",passWord);
                         }else{
-                            alert(res.data)
+                            alert("用户名或者密码错误")
                         }
                     }
                 });
@@ -63,11 +68,12 @@
                 if (e.keyCode === 13){
                     var userName=$("input[type=text]").val().trim();
                     var passWord=$("input[type=password]").val();
-                    console.log(userName+passWord);
+                    // console.log(userName+passWord);
 
-                    window.sessionStorage.setItem("username","userName");
-                    window.sessionStorage.setItem("password","passWord");
-                    
+                    // window.sessionStorage.setItem("username",userName);
+                    // window.sessionStorage.setItem("password",passWord);
+                    // var username=window.sessionStorage.getItem("username")
+                    // console.log(username)
                     $.ajax({
                         type:"post",
                         url:"http://192.168.0.171:8080/WSHD/login",
