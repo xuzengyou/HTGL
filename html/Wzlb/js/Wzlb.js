@@ -78,7 +78,7 @@ $(function(){
             var html="";
             for(var i in res.data){
                 var url=res.data[i].httpUrl,id=res.data[i].articleId,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
-                var href1="../Fbwz/Fbwz.html";
+                var href1="../XFbwz/XFbwz.html";
                 html+="<tr>";
                     html+="<td>";
                         html+="<input type=checkbox data-cls="+res.data[i].articleId+">";
@@ -134,7 +134,7 @@ $(function(){
                     totalData: res.count,
                     showData: res.data.length,
                     current:page,
-                    pageCount: 5,
+                    pageCount: 2,
                     callback:function (res){
                         $.ajax({
                             type: "post",
@@ -149,20 +149,20 @@ $(function(){
                                 var html="";
                                 for(var i in res.data){
                                     var url=res.data[i].httpUrl,id=res.data[i].articleId,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
-                                    
+                                    var href1="../XFbwz/XFbwz.html";
                                     html+="<tr>";
                                         html+="<td>";
-                                            html+="<input type=checkbox>";
+                                            html+="<input type=checkbox data-cls="+res.data[i].articleId+">";
                                         html+="</td>";
                                         html+="<td>";
                                             html+="<span>"+res.data[i].title+"</span>";
                                         html+="</td>";
-                                        html+="<td>"+res.data[i].sortId+"</td>";
+                                        html+="<td>"+res.data[i].addTime+"</td>";
                                         html+="<td>"+res.data[i].sortId+"</td>";
                                         html+="<td>"+res.data[i].author+"</td>";
                                         html+="<td>";
-                                            html+="<a href=../Fbwz/Fbwz.html></a>";
-                                            html+="<a href=../Fbwz/Fbwz.html>编辑&nbsp;&nbsp;</a>";
+                                            html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+"></a>";
+                                            html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+">编辑&nbsp;&nbsp;</a>";
                                             html+="<a href="+href+"></an>";
                                             html+="<a href="+href+">预览</a>";
                                         html+="</td>";
@@ -170,13 +170,32 @@ $(function(){
                     
                     
                                     $("div.mRto table tbody").html(html);
+                    
                                     //点击删除增加
                                     $("div.mRto table tbody tr td input").click(function(){
-                                        console.log(999);
-                                        $(this).parent().parent().addClass("ac");
+                                        console.log($(this).attr("data-cls"));
+                                        if($(this).parent().parent().hasClass("ac")){
+                                            $(this).parent().parent().removeClass("ac");
+                                        }else{
+                                            $(this).parent().parent().addClass("ac");
+                                        }
+                                        var id=$(this).attr("data-cls");
+                                        $.ajax({
+                                            type:"post",
+                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            dataType:"JSON",
+                                            data:{
+                                                id:id
+                                            },
+                                            success:function(res){
+                                                console.log(res)
+                                            }
+                    
+                                        });
+                    
                                     });
                                     $("span.schu").click(function(){
-
+                    
                                         $("div.mRto table tbody tr.ac").remove();
                                     });
                     

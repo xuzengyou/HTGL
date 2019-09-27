@@ -115,40 +115,46 @@
                     </div>
                     <div class="mRofi">
                         <div class="mRofio">
-                            <span>文章主栏目</span>
+                            <span>幻灯所属栏目</span>
                         </div>
                         <div class="c1">
                             <div class="mRofit" style="cursor: pointer;">
-                                <span>请选择主栏目</span><span class="zsj"></span>
+                                <span>请选择栏目</span><span class="zsj"></span>
                             </div>
                             <div class="zlb">
                                 <div class="zlbO">
-                                    <span>财经</span>
+                                    <span data-ia="1">财经</span>
                                 </div>
                                 <div class="zlbT">
-                                    <span>股票</span>
+                                    <span data-ia="2">股票</span>
                                 </div>
                                 <div class="zlbTh">
-                                    <span>外汇</span>
+                                    <span data-ia="3">外汇</span>
+                                </div>
+                                <div class="zlbTh">
+                                    <span data-ia="4">终端页面</span>
                                 </div>
                             </div>
                         </div>
                         <div class="c2">
                             <div class="mRofith" style="cursor: pointer;">
-                                <span>请选择子栏目</span><span class="flm"></span>
+                                <span>选择幻灯位置</span><span class="flm"></span>
                             </div>
                             <div class="flb">
                                 <div class="flbO">
-                                    <span>幻灯</span>
+                                    <span data-ib="1">财经首页1</span>
                                 </div>
                                 <div class="flbT">
-                                    <span>正文推荐</span>
+                                    <span data-ib="2">财经首页2</span>
                                 </div>
                                 <div class="flbTh">
-                                    <span>图文结合</span>
+                                    <span data-ib="3">股票首页3</span>
                                 </div>
                                 <div class="flbF">
-                                    <span>新手学习</span>
+                                    <span data-ib="4">外汇首页4</span>
+                                </div>
+                                <div class="flbFi">
+                                    <span data-ib="5">终端页面5</span>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +286,7 @@
                                 <span>上传:</span>
                                 <input type="file" class="shangc">
                                 <span class="shanc">删除图片</span>
-                                <span class="shangch">点击确定要上传图片</span>
+                                <span class="shangch">点击选择图片</span>
                             </div>
                         </div>
                         <div class="yulan">
@@ -297,9 +303,9 @@
                    </div>
                    <div class="mRtt">
                         <form>
-                            <textarea name="content" style="width:1700px;height:360px;visibility:hidden;"></textarea>
+                            <textarea name="content" style="width:1700px;height:435px;visibility:hidden;"></textarea>
                             <p>
-                                <input type="button" name="getHtml" value="取得HTML" />
+                                <!-- <input type="button" name="getHtml" value="取得HTML" />
                                 <input type="button" name="isEmpty" value="判断是否为空" />
                                 <input type="button" name="getText" value="取得文本(包含img,embed)" />
                                 <input type="button" name="selectedHtml" value="取得选中HTML" />
@@ -310,7 +316,7 @@
                                 <input type="button" name="insertHtml" value="插入HTML" />
                                 <input type="button" name="appendHtml" value="添加HTML" />
                                 <input type="button" name="clear" value="清空内容" />
-                                <input type="reset" name="reset" value="Reset" />
+                                <input type="reset" name="reset" value="Reset" /> -->
                             </p>
                         </form>
                    </div>
@@ -334,7 +340,8 @@
                        </div>
                    </div>
                    <div class="mRtf">
-                       <button type="button" class="fb">发布</button>
+                       <button type="button" class="fb">发布普通文章</button>
+                       <button type="button" class="fbHD">发布幻灯文章</button>
                    </div>
                 </div>
 
@@ -355,34 +362,8 @@
             });
             K('input[name=getHtml]').click(function(e) {
                 alert(editor.html());
-                // console.log(123);
-                //轮播图下方新闻
-                // $.ajax({
-                //     type:"get",
-                //     url:"http://192.168.0.171:8080/WSHD/jiekou/AllStock?page=0&num=2",
-                //     dataType:"json",
-                //     data:{},
-                //     success:function(res){
-                //         console.log(res);
-                //     var html="";
-                //     for(var i in res.data){
-                //         var url=res.data[i].httpUrl,id=res.data[i].aid,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
-                        
-                //         console.log(href);
-                //         html+='<div class="mainToplto">';
-                        
-                //             html+="<a href="+href+">";
-                //                 html+="<img src="+res.data[i].thumb+" alt="+res.data[i].thumb+" >";
-                //             html+="</a>";
-                //             html+="<a href="+href+">"+res.data[i].title+"</a>";
-
-                //         html+='</div>';
-                        
-                //         }
-                //         console.log(html);
+                
                         console.log(editor.html());
-                //     }
-                // });
 
             });
             

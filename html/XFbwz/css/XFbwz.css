@@ -719,7 +719,7 @@
 }
 .c .mainR .zn .zNr .zNrt .zNrtt span:nth-child(4){
     display: inline-block;
-    width: 170px;
+    width: 115px;
     line-height: 30px;
     background-color: #ccc;
     border-radius: 3px;
@@ -852,7 +852,7 @@
 }
 .c .mainR .mRt .mRtf button{
     display: inline-block;
-    width: 160px;
+    width: 180px;
     height: 80px;
     background-color: #046EB8;
     color: #fff;

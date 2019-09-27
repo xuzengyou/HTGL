@@ -1,4 +1,12 @@
 $(function(){
+    //获取用户名
+    var userName=window.sessionStorage.getItem("username");
+    // console.log(userName);
+    $("a.user").html("您好"+userName+"欢迎您登陆");
+    //点击退出清除内容
+    $("a.tc").click(function(){
+        window.sessionStorage.clear();
+    });
     //页面打开根据id发请求
     window.location.search;
     console.log(window.location.search.split("?")[1].split("&"));
@@ -33,11 +41,8 @@ $(function(){
                 $("input.wzbt").val(res.data.title);
                 editor.html(res.data.content);
                 
-                //点击发布文章
+                //点击发布普通文章
                 $("button.fb").click(function(){
-                    // console.log(record);
-                    // console.log($("input.wzbt").val());
-                    // console.log(editor.html());
 
                     title=$("input.wzbt").val(),
                     articleId=res.data.articleId,sortId=res.data.sortId,intro=res.data.intro,author=res.data.author,copyfrom=res.data.copyfrom,
@@ -105,14 +110,14 @@ $(function(){
                 $(this).parent().addClass("gg");
                 $(this).parent().siblings().removeClass("gg")
                 console.log($(this).attr("data-cls"));
-                var folder=$(this).attr("data-cls");
+                var folde=$(this).attr("data-cls");
 
                 function loadData(page) {
                     $.ajax({
                         type: "post",
                         url: "http://192.168.0.171:8080/WSHD/jiekou7/selectImage2",
                         data: {
-                            folder:folder,
+                            folder:folde,
                             page: page,
                             num: 7
                         },
@@ -140,11 +145,20 @@ $(function(){
                             $(".c .mainR .zn .zNr .zNro table tbody tr td:nth-child(2) span").click(function(){
                                 $("div.yulan").addClass("xs");
                                 $(".shixiao").attr("src",$(this).attr("data-cls"));
+                                //点击空白处隐藏图片预览
+                                // $(document).click(function(event){
+                                //     var _con = $(".zNrto");  // 设置失效目标区域
+                                //     if(!_con.is(event.target) && _con.has(event.target).length === 0){
+                                //         $("div.yulan").removeClass("xs");
+                                //     }
+                                // });
                                 
                             });
                             $(".shixiao").click(function(event){
-                                $(this).parent().removeClass("xs")
+                                $(this).parent().removeClass("xs");
+                                
                             });
+                            
 
                             //点击对勾选中对应图片
                             var folde,filename;
@@ -196,7 +210,7 @@ $(function(){
                                 totalData: res.sum,
                                 showData: res.data.length,
                                 current:page,
-                                pageCount: 5,
+                                pageCount: 1,
                                 callback:function (res){
                                     
                                     console.log(res.getCurrent())
@@ -204,7 +218,7 @@ $(function(){
                                         type: "post",
                                         url: "http://192.168.0.171:8080/WSHD/jiekou7/selectImage2",
                                         data: {
-                                            folder:folder,
+                                            folder:folde,
                                             page:res.getCurrent(),
                                             num:7
                                         },
@@ -317,6 +331,8 @@ $(function(){
                             
                         }
                     })
+                }else{
+                    alert("请输入正确的文件夹名称")
                 }
             });
             //点击删除文件夹
@@ -442,9 +458,12 @@ $(function(){
             $("div.flb").css("display","none");
         }
     });
+    var style,style_id,sarticleId;
     //点击选取具体主栏目
     $("div.zlb>div span").click(function(){
-        // console.log(132);
+        
+        style=$(this).attr("data-ia");
+        console.log(style);
         $("div.mRofit").children().eq(0).html($(this).html());
         $("div.zlb").toggle();
         if($("span.zsj").hasClass("ac")){
@@ -455,7 +474,8 @@ $(function(){
     });
     //点击选取具体副栏目
     $("div.flb>div span").click(function(){
-        // console.log(132);
+        style_id=$(this).attr("data-ib");
+        console.log(style_id);
         $("div.mRofith").children().eq(0).html($(this).html());
         $("div.flb").toggle();
         if($("span.flm").hasClass("ac")){
@@ -500,8 +520,8 @@ $(function(){
 
         //  console.log(reader.readAsDataURL(file))
         //        当文件阅读结束后执行的方法
-        var folder=$("div.zNlt ul li.gg span").attr("data-cls");
-        console.log(folder);
+        var fold=$("div.zNlt ul li.gg span").attr("data-cls");
+        console.log(fold);
         reader.addEventListener('load',function () {
             //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
             switch (file.type){
@@ -520,7 +540,7 @@ $(function(){
                     url:"http://192.168.0.171:8080/WSHD/jiekou7/Image",
                     dataType:"json",
                     data:{
-                        folder:folder,
+                        folder:fold,
                         image:img.src
                     },
                     success:function(res){
@@ -592,15 +612,38 @@ $(function(){
         console.log(getNowFormatDate())
         $("span.shij").html(getNowFormatDate());
 
-        //获取用户名
-        var userName=window.sessionStorage.getItem("username");
-        // console.log(userName);
-        $("a.user").html("您好"+userName+"欢迎您登陆");
-        //点击退出清除内容
-        $("a.tc").click(function(){
-            window.sessionStorage.clear();
-        });
+        
 
+        //点击发布幻灯文章
+    $("button.fbHD").click(function(){
+        // console.log(style+style_id+id)
+        if(style&&style_id){
+            $.ajax({
+                type:"post",
+                url:"http://192.168.0.171:8080/WSHD/jiekou7/huanDengImage",
+                dataType:"JSON",
+                data:{
+                    style:style,
+                    id:style_id,
+                    articleId:id
+                },
+                success:function(res){
+                    // if(style!=NaN&&style_id!=NaN&&id){
+                        if(res.code==200){
+                            console.log(res)
+                            alert("发布成功");
+                            window.location.href="../Wzlb/Wzlb.html";
+                        }else{
+                            alert("发布失败，请检查输入选项")
+                        }
+                    
+                    
+                }
+            })
+        }else{
+            alert("请选择幻灯所属栏目和位置")
+        }
+    })
         
 
 

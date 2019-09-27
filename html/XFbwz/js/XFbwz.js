@@ -1,49 +1,129 @@
 $(function(){
+    //获取用户名
+    var username=window.sessionStorage.getItem("username");
+    // console.log(userName);
+    $("a.user").html("您好"+username+"欢迎您登陆");
+    //点击退出清除内容
+    $("a.tc").click(function(){
+        window.sessionStorage.clear();
+    });
+
 
     //加粗
     $("span.jiac").click(function(){
         // $("input.")
     });
+
     
-    var aid=null,articleId,sortId,title,
-    intro,authorImg=null,author,copyfrom,
+    //点击选取文章主栏目副栏目
+    $("div.mRofit").click(function(){
+        $("div.zlb").toggle();
+        // $("span.zsj").addClass("ac")
+        if($("span.zsj").hasClass("ac")){
+            $("span.zsj").removeClass("ac");
+        }else{
+            $("span.zsj").addClass("ac");
+        }
+    });
+    $("div.mRofith").click(function(){
+        $("div.flb").toggle();
+        if($("span.flm").hasClass("ac")){
+            $("span.flm").removeClass("ac");
+        }else{
+            $("span.flm").addClass("ac");
+        }
+    });
+    //点击空白处隐藏主栏目下拉菜单
+    $(document).click(function(event){
+        var _con = $(".mRofit");  // 设置失效目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){
+            $("div.zlb").css("display","none");
+        }
+    });
+    //点击空白处隐藏副栏目下拉菜单
+    $(document).click(function(event){
+        var _con = $(".mRofith");  // 设置失效目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){
+            $("div.flb").css("display","none");
+        }
+    });
+    var sslm;
+    //点击选取具体主栏目
+    $("div.zlb>div span").click(function(){
+        $(this).addClass("acc");
+        $(this).parent().siblings().children().removeClass("acc");
+        sslm=$(this).attr("data-id");
+        console.log(sslm);
+        $("div.mRofit").children().eq(0).html($(this).html());
+        $("div.zlb").toggle();
+        if($("span.zsj").hasClass("ac")){
+            $("span.zsj").removeClass("ac");
+        }else{
+            $("span.zsj").addClass("ac");
+        }
+    });
+    //点击选取具体副栏目
+    $("div.flb>div span").click(function(){
+        // console.log(132);
+        $("div.mRofith").children().eq(0).html($(this).html());
+        $("div.flb").toggle();
+        if($("span.flm").hasClass("ac")){
+            $("span.flm").removeClass("ac");
+        }else{
+            $("span.flm").addClass("ac");
+        }
+    });
+
+
+
+
+
+
+
+    //内容不为空后发布文章
+    var aid=null,articleId,title,
+    intro,authorImg=null,author=username,copyfrom,
     inputer=null,httpUrl,keyword=null,hits=null,
     postNum=null,ontop=null,iselite=null,deleted=null,
-    addTime=null,updateTime=getNowFormatDate(),createTime=null,
+    addTime=getNowFormatDate(),updateTime=getNowFormatDate(),createTime=null,
     lastPost=null,ownerTag=null,ownerRemark=null,htmlPath=null,
     filesPath=null,tempPath=null,thumb,htmlStatus=null,
     articleStatus=null,tableName=null,content;
     
-                
+           
     //点击发布文章
     $("button.fb").click(function(){
-        // console.log(record);
-        // console.log($("input.wzbt").val());
-        // console.log(editor.html());
+        var sortId=$("span.acc").attr("data-id");
+        console.log(username+getNowFormatDate()+sortId);
+        // if(sortId){
 
-        title=$("input.wzbt").val(),
-        articleId=null,sortId=null,intro=null,author=null,copyfrom=null,
-        httpUrl=null,content=editor.html();
-    
-        var record=JSON.stringify({
-            aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
-            lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
-        });
-        console.log(record)
-        $.ajax({
-            type:"post",
-            url:"http://192.168.0.171:8080/WSHD/jiekou6/Create",
-            dataType:"json",
-            contentType:"application/json;charset=UTF-8",
-            data:record,
-            success:function(res){
-                alert("发布成功");
-                window.location.href="../Wzlb/Wzlb.html";
-            }
-        })
+            title=$("input.wzbt").val(),
+            articleId=null,intro=null,copyfrom=null,
+            httpUrl=null,content=editor.html();
+        
+            var record=JSON.stringify({
+                aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
+                lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
+            });
+            console.log(record)
+            if(title&&sortId){
+                $.ajax({
+                    type:"post",
+                    url:"http://192.168.0.171:8080/WSHD/jiekou6/Create",
+                    dataType:"json",
+                    contentType:"application/json;charset=UTF-8",
+                    data:record,
+                    success:function(res){
+                        alert("发布成功");
+                        window.location.href="../Wzlb/Wzlb.html";
+                    }
+                })
+            }else{
+                    alert("文章标题、文章所属栏目不能为空");
+                }
 
     });
-
+    
            
     
 
@@ -381,60 +461,7 @@ $(function(){
             $(this).siblings().addClass("ab");
         }
     });
-    //点击选取文章主栏目副栏目
-    $("div.mRofit").click(function(){
-        $("div.zlb").toggle();
-        // $("span.zsj").addClass("ac")
-        if($("span.zsj").hasClass("ac")){
-            $("span.zsj").removeClass("ac");
-        }else{
-            $("span.zsj").addClass("ac");
-        }
-    });
-    $("div.mRofith").click(function(){
-        $("div.flb").toggle();
-        if($("span.flm").hasClass("ac")){
-            $("span.flm").removeClass("ac");
-        }else{
-            $("span.flm").addClass("ac");
-        }
-    });
-    //点击空白处隐藏主栏目下拉菜单
-    $(document).click(function(event){
-        var _con = $(".mRofit");  // 设置失效目标区域
-        if(!_con.is(event.target) && _con.has(event.target).length === 0){
-            $("div.zlb").css("display","none");
-        }
-    });
-    //点击空白处隐藏副栏目下拉菜单
-    $(document).click(function(event){
-        var _con = $(".mRofith");  // 设置失效目标区域
-        if(!_con.is(event.target) && _con.has(event.target).length === 0){
-            $("div.flb").css("display","none");
-        }
-    });
-    //点击选取具体主栏目
-    $("div.zlb>div span").click(function(){
-        // console.log(132);
-        $("div.mRofit").children().eq(0).html($(this).html());
-        $("div.zlb").toggle();
-        if($("span.zsj").hasClass("ac")){
-            $("span.zsj").removeClass("ac");
-        }else{
-            $("span.zsj").addClass("ac");
-        }
-    });
-    //点击选取具体副栏目
-    $("div.flb>div span").click(function(){
-        // console.log(132);
-        $("div.mRofith").children().eq(0).html($(this).html());
-        $("div.flb").toggle();
-        if($("span.flm").hasClass("ac")){
-            $("span.flm").removeClass("ac");
-        }else{
-            $("span.flm").addClass("ac");
-        }
-    });
+    
     
 
     //本地图片上传
@@ -563,15 +590,7 @@ $(function(){
         console.log(getNowFormatDate())
         $("span.shij").html(getNowFormatDate());
 
-        //获取用户名
-        var username=window.sessionStorage.getItem("username");
-        // console.log(userName);
-        $("a.user").html("您好"+username+"欢迎您登陆");
-        //点击退出清除内容
-        $("a.tc").click(function(){
-            window.sessionStorage.clear();
-        });
-
+        
         
 
 
