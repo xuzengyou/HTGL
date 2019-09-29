@@ -110,14 +110,14 @@ $(function(){
                 $(this).parent().addClass("gg");
                 $(this).parent().siblings().removeClass("gg")
                 console.log($(this).attr("data-cls"));
-                var folde=$(this).attr("data-cls");
+                var foldeWjj=$(this).attr("data-cls");
 
                 function loadData(page) {
                     $.ajax({
                         type: "post",
                         url: "http://192.168.0.171:8080/WSHD/jiekou7/selectImage2",
                         data: {
-                            folder:folde,
+                            folder:foldeWjj,
                             page: page,
                             num: 7
                         },
@@ -161,7 +161,7 @@ $(function(){
                             
 
                             //点击对勾选中对应图片
-                            var folde,filename;
+                            var foldeDg,filename;
                             $(".c .mainR .zn .zNr .zNro table tbody tr td:first-child input").click(function(){
                                 if($(this).parent().parent().hasClass("ac")){
                                     $(this).parent().parent().removeClass("ac");
@@ -170,20 +170,20 @@ $(function(){
                                     $(this).parent().parent().addClass("ac");
                                     $(this).attr('checked',true)
                                 };
-                                folde=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
+                                foldeDg=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
                                 filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
                             });
             
                             //点击删除图片
                             $("span.shanc").click(function(){
                                 $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
-                                console.log(folde+filename);
+                                console.log(foldeDg+filename);
                                 $.ajax({
                                     type:"post",
                                     url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
                                     dataType:"JSON",
                                     data:{
-                                        folder:folde,
+                                        folder:foldeDg,
                                         filename:filename
                                     },
                                     success:function(){
@@ -218,7 +218,7 @@ $(function(){
                                         type: "post",
                                         url: "http://192.168.0.171:8080/WSHD/jiekou7/selectImage2",
                                         data: {
-                                            folder:folde,
+                                            folder:foldeWjj,
                                             page:res.getCurrent(),
                                             num:7
                                         },
@@ -250,7 +250,7 @@ $(function(){
                                                 $(this).parent().removeClass("xs")
                                             });
                                             //点击对勾选中对应图片
-                                            var folde,filename;
+                                            var foldeDg,filename;
                                             $(".c .mainR .zn .zNr .zNro table tbody tr td:first-child input").click(function(){
                                                 if($(this).parent().parent().hasClass("ac")){
                                                     $(this).parent().parent().removeClass("ac");
@@ -259,7 +259,7 @@ $(function(){
                                                     $(this).parent().parent().addClass("ac");
                                                     $(this).attr('checked',true)
                                                 };
-                                                folde=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
+                                                foldeDg=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
                                                 filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
                                             });
                                             //点击删除图片
@@ -271,7 +271,7 @@ $(function(){
                                                     url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
                                                     dataType:"JSON",
                                                     data:{
-                                                        folder:folde,
+                                                        folder:foldeDg,
                                                         filename:filename
                                                     },
                                                     success:function(){
@@ -311,14 +311,14 @@ $(function(){
             //点击新建文件夹
             $("span.New").click(function(){
                                 
-                var fold=$("input.wjjsc").val().trim();
+                var foldXj=$("input.wjjsc").val().trim();
                 if(fold){
                     $.ajax({
                         type:"post",
                         url:"http://192.168.0.171:8080/WSHD/jiekou7/insertFolder",
                         dataType:"JSON",
                         data:{
-                            newFile:fold
+                            newFile:foldXj
                         },
                         success:function(res){
                             if(res.code==200){
@@ -520,8 +520,8 @@ $(function(){
 
         //  console.log(reader.readAsDataURL(file))
         //        当文件阅读结束后执行的方法
-        var fold=$("div.zNlt ul li.gg span").attr("data-cls");
-        console.log(fold);
+        var foldYd=$("div.zNlt ul li.gg span").attr("data-cls");
+        console.log(foldYd);
         reader.addEventListener('load',function () {
             //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
             switch (file.type){
@@ -540,7 +540,7 @@ $(function(){
                     url:"http://192.168.0.171:8080/WSHD/jiekou7/Image",
                     dataType:"json",
                     data:{
-                        folder:fold,
+                        folder:foldYd,
                         image:img.src
                     },
                     success:function(res){
