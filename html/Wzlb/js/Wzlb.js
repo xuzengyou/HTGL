@@ -69,7 +69,7 @@ $(function(){
             url: "http://192.168.0.171:8080/WSHD/jiekou6/select",
             data: {
                 page: page,
-                num: 20
+                num: 18
             },
             dataType: "JSON",
             success: function (res) {
@@ -141,7 +141,7 @@ $(function(){
                             url: "http://192.168.0.171:8080/WSHD/jiekou6/select",
                             data: {
                                 page:res.getCurrent(),
-                                num:20
+                                num:18
                             },
                             dataType: "JSON",
                             success: function (res) {

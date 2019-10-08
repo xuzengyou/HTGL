@@ -1,7 +1,7 @@
 $(function(){
     //获取用户名
     var userName=window.sessionStorage.getItem("username");
-    // console.log(userName);
+    
     $("a.user").html("您好"+userName+"欢迎您登陆");
     //点击退出清除内容
     $("a.tc").click(function(){
@@ -178,18 +178,22 @@ $(function(){
                             $("span.shanc").click(function(){
                                 $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
                                 console.log(foldeDg+filename);
-                                $.ajax({
-                                    type:"post",
-                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
-                                    dataType:"JSON",
-                                    data:{
-                                        folder:foldeDg,
-                                        filename:filename
-                                    },
-                                    success:function(){
-                                        alert("删除图片成功")
-                                    }
-                                });
+                                if(filename){
+                                    $.ajax({
+                                        type:"post",
+                                        url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                        dataType:"JSON",
+                                        data:{
+                                            folder:foldeDg,
+                                            filename:filename
+                                        },
+                                        success:function(){
+                                            alert("删除图片成功")
+                                        }
+                                    });
+                                }else{
+                                    alert("请选择图片")
+                                }
                             });
                             // 点击上传图片
                             $("span.shangch").click(function(){
@@ -266,18 +270,22 @@ $(function(){
                                             $("span.shanc").click(function(){
                                                 $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
                                                 console.log(folde+filename);
-                                                $.ajax({
-                                                    type:"post",
-                                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
-                                                    dataType:"JSON",
-                                                    data:{
-                                                        folder:foldeDg,
-                                                        filename:filename
-                                                    },
-                                                    success:function(){
-                                                        alert("删除图片成功")
-                                                    }
-                                                });
+                                                if(filename){
+                                                    $.ajax({
+                                                        type:"post",
+                                                        url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                                        dataType:"JSON",
+                                                        data:{
+                                                            folder:foldeDg,
+                                                            filename:filename
+                                                        },
+                                                        success:function(){
+                                                            alert("删除图片成功")
+                                                        }
+                                                    });
+                                                }else{
+                                                    alert("请选择图片")
+                                                }
                                             });
                                             // 点击上传图片
                                             $("span.shangch").click(function(){
@@ -489,7 +497,7 @@ $(function(){
     //本地图片上传
     // 单张上传照片  删除照片
     $(" .bdsc").change(function () {
-        $("div.yulan").html("");
+        // $("div.yulan").html("");
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".slt"));
         // console.log($("input.fileinput4").val());
@@ -520,40 +528,45 @@ $(function(){
 
         //  console.log(reader.readAsDataURL(file))
         //        当文件阅读结束后执行的方法
-        var foldYd=$("div.zNlt ul li.gg span").attr("data-cls");
+        // var foldYd=$("div.zNlt ul li.gg span").attr("data-cls");
+        var foldYd=2;
         console.log(foldYd);
-        reader.addEventListener('load',function () {
-            //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
-            switch (file.type){
-                case 'image/jpg':
-                case 'image/png':
-                case 'image/jpeg':
-                case 'image/gif':
-                var img = document.createElement('img');
-                img.src = reader.result;
-                // console.log(img.src);
-                element.append(img);
-                element.show();
-                $("input.lj").val(img.src);
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/Image",
-                    dataType:"json",
-                    data:{
-                        folder:foldYd,
-                        image:img.src
-                    },
-                    success:function(res){
-                        console.log("上传成功！！！！！！！！！");
-                    
+        if(foldYd){
+            reader.addEventListener('load',function () {
+                //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
+                switch (file.type){
+                    case 'image/jpg':
+                    case 'image/png':
+                    case 'image/jpeg':
+                    case 'image/gif':
+                    var img = document.createElement('img');
+                    img.src = reader.result;
+                    // console.log(img.src);
+                    element.append(img);
+                    element.show();
+                    $("input.lj").val(img.src);
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou7/Image",
+                        dataType:"json",
+                        data:{
+                            folder:foldYd,
+                            image:img.src
+                        },
+                        success:function(res){
+                            console.log("上传成功！！！！！！！！！");
+                        
+                        }
+                    });//请求结束
+
+
+
+                    break;
                     }
-                });//请求结束
-
-
-
-                break;
-                }
-            });
+                });
+        }else{
+         alert("请先选择需要上传到的目录")   
+        }
             
         };//readFile函数结束
 
@@ -609,9 +622,8 @@ $(function(){
             return currentdate;
         };
         getNowFormatDate();
-        console.log(getNowFormatDate())
+        console.log(getNowFormatDate());
         $("span.shij").html(getNowFormatDate());
-
         
 
         //点击发布幻灯文章
