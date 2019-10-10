@@ -33,13 +33,14 @@ $(function(){
         $(id).addClass("ac").siblings().removeClass("ac");
     });
     
-    var image_id;
+    var image_id,style;
     // 财经首页
     // 单张上传照片  删除照片
     $(" .fileinput1").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".csoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
 
     var on =document.querySelector(".csoo");
@@ -52,6 +53,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".chgoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
 
     var on =document.querySelector(".chgoo");
@@ -63,6 +65,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cjjoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
 
     var on =document.querySelector(".cjjoo");
@@ -74,6 +77,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".ckcoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".ckcoo");
     //    需要把阅读的文件传进来file element是把读取到的内容放入的容器
@@ -84,6 +88,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".csyoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".csyoo");
 
@@ -93,6 +98,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".chjoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".chjoo");
 
@@ -102,6 +108,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cxsoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".cxsoo");
 
@@ -111,6 +118,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cxgoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".cxgoo");
 
@@ -120,6 +128,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cxwoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".cxwoo");
 
@@ -129,6 +138,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".czxoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".czxoo");
 
@@ -138,6 +148,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cwhoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".cwhoo");
 
@@ -147,55 +158,9 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cgpoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".cgpoo");
-
-    //财经发请求开始
-    function readFile(file,element) {
-        //        新建阅读器
-        var reader = new FileReader();
-        //        根据文件类型选择阅读方式
-        switch (file.type){
-            case 'image/jpg':
-            case 'image/png':
-            case 'image/jpeg':
-            case 'image/gif':
-            reader.readAsDataURL(file);
-            break;
-        };
-        //        当文件阅读结束后执行的方法
-        reader.addEventListener('load',function () {
-            //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
-            switch (file.type){
-                case 'image/jpg':
-                case 'image/png':
-                case 'image/jpeg':
-                case 'image/gif':
-                var img = document.createElement('img');
-                img.src = reader.result;
-                console.log(image_id+img.src);
-                element.append(img);
-                element.show();
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/ADImage",
-                    dataType:"json",
-                    data:{
-                        image:img.src,
-                        style:1,
-                        id:image_id
-                    },
-                    success:function(res){
-                        console.log("上传成功！！！！！！！！！");
-                    
-                    }
-                });//请求结束
-
-                break;
-                }
-            });
-            
-        };//readFile函数结束
 
     // 股票首页
     // 单张上传照片  删除照片
@@ -203,6 +168,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gsoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".gsoo");
 
@@ -212,6 +178,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gzxoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".gzxoo");
 
@@ -221,6 +188,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gdpoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".gdpoo");
 
@@ -230,57 +198,9 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gscoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".gscoo");
-
-
-
-    //股票发请求开始
-    function readFile(file,element) {
-        //        新建阅读器
-        var reader = new FileReader();
-        //        根据文件类型选择阅读方式
-        switch (file.type){
-            case 'image/jpg':
-            case 'image/png':
-            case 'image/jpeg':
-            case 'image/gif':
-            reader.readAsDataURL(file);
-            break;
-        };
-        //        当文件阅读结束后执行的方法
-        reader.addEventListener('load',function () {
-            //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
-            switch (file.type){
-                case 'image/jpg':
-                case 'image/png':
-                case 'image/jpeg':
-                case 'image/gif':
-                var img = document.createElement('img');
-                img.src = reader.result;
-                console.log(image_id+img.src);
-                element.append(img);
-                element.show();
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/ADImage",
-                    dataType:"json",
-                    data:{
-                        image:img.src,
-                        style:2,
-                        id:image_id
-                    },
-                    success:function(res){
-                        console.log("上传成功！！！！！！！！！");
-                    
-                    }
-                });//请求结束
-
-                break;
-                }
-            });
-            
-        };//readFile函数结束
 
 
     // 外汇首页
@@ -289,6 +209,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".wsoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".wsoo");
 
@@ -298,6 +219,7 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".wywoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".wywoo");
 
@@ -307,57 +229,9 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".wkcoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".wkcoo");
-
-
-    //外汇发请求开始
-    function readFile(file,element) {
-        //        新建阅读器
-        var reader = new FileReader();
-        //        根据文件类型选择阅读方式
-        switch (file.type){
-            case 'image/jpg':
-            case 'image/png':
-            case 'image/jpeg':
-            case 'image/gif':
-            reader.readAsDataURL(file);
-            break;
-        };
-        //        当文件阅读结束后执行的方法
-        reader.addEventListener('load',function () {
-            //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
-            switch (file.type){
-                case 'image/jpg':
-                case 'image/png':
-                case 'image/jpeg':
-                case 'image/gif':
-                var img = document.createElement('img');
-                img.src = reader.result;
-                console.log(image_id+img.src);
-                element.append(img);
-                element.show();
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/ADImage",
-                    dataType:"json",
-                    data:{
-                        image:img.src,
-                        style:3,
-                        id:image_id
-                    },
-                    success:function(res){
-                        console.log("上传成功！！！！！！！！！");
-                    
-                    }
-                });//请求结束
-
-                break;
-                }
-            });
-            
-        };//readFile函数结束
-
 
     // 最终页面正文
     // 单张上传照片  删除照片
@@ -365,11 +239,14 @@ $(function(){
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".azwoo"));
         image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".azwoo");
 
 
-    //外汇发请求开始
+
+
+    //发请求开始
     function readFile(file,element) {
         //        新建阅读器
         var reader = new FileReader();
@@ -383,6 +260,7 @@ $(function(){
             break;
         };
         //        当文件阅读结束后执行的方法
+        
         reader.addEventListener('load',function () {
             //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
             switch (file.type){
@@ -392,24 +270,27 @@ $(function(){
                 case 'image/gif':
                 var img = document.createElement('img');
                 img.src = reader.result;
-                console.log(image_id+img.src);
+                
                 element.append(img);
+                
+                console.log(style+image_id+img.src);
                 element.show();
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/ADImage",
-                    dataType:"json",
-                    data:{
-                        image:img.src,
-                        style:4,
-                        id:image_id
-                    },
-                    success:function(res){
-                        console.log("上传成功！！！！！！！！！");
-                    
-                    }
-                });//请求结束
-
+               
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou7/ADImage",
+                        dataType:"json",
+                        data:{
+                            image:img.src,
+                            style:style,
+                            id:image_id
+                        },
+                        success:function(res){
+                            console.log("上传成功！！！！！！！！！");
+                        
+                        }
+                    });//请求结束
+                
                 break;
                 }
             });

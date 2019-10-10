@@ -85,13 +85,19 @@
                             </div>
                             <div class="lxCt">
                                 <div class="lxCto">
-                                    <span id="1">财经</span>
+                                    <span id="0" data-id="#z">全部文章</span>
                                 </div>
                                 <div class="lxCto">
-                                    <span id="2">股票</span>
+                                    <span id="1" data-id="#one">财经文章</span>
                                 </div>
                                 <div class="lxCto">
-                                    <span id="3">外汇</span>
+                                    <span id="2" data-id="#two">股票文章</span>
+                                </div>
+                                <div class="lxCto">
+                                    <span id="3" data-id="#three">外汇文章</span>
+                                </div>
+                                <div class="lxCto">
+                                    <span id="4" data-id="#four">幻灯文章</span>
                                 </div>
                             </div>
                         </div>
@@ -103,107 +109,340 @@
                     </div>
                 </div>
                 <!-- 主体右边第二部分开始 -->
-                <div class="mRt">
-                    <div class="mRto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>选择</td>
-                                    <td>文章标题</td>
-                                    <td>发布时间</td>
-                                    <td>所属栏目</td>
-                                    <td>发布人</td>
-                                    <td>操作</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>
-                                        <span>
-                                        表单域标签的宽度，作为 Form 直接子元素的
+                <div class="cont">
+                    <div class="mRt ac" id="z">
+                        <div class="mRto" id="zz">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>选择</td>
+                                        <td>文章标题</td>
+                                        <td>发布时间</td>
+                                        <td>所属栏目</td>
+                                        <td>发布人</td>
+                                        <td>操作</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
                                             表单域标签的宽度，作为 Form 直接子元素的
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                        </span>
-                                     </td>
-                                    <td>2019-09-10</td>
-                                    <td>财经</td>
-                                    <td>小兰</td>
-                                    <td>
-                                        <a href="../Fbwz/Fbwz.html"></a>
-                                        <a href="../Fbwz/Fbwz.html">编辑</a>
-                                        <a href="#"></a>
-                                        <a href="../ZZYM/zzym.html">预览</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>
-                                        <span>
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                        </span>
-                                    </td>
-                                    <td>2019-09-10</td>
-                                    <td>财经</td>
-                                    <td>小兰</td>
-                                    <td>
-                                        <a href="#"></a>
-                                        <a href="#">编辑</a>
-                                        <a href="#"></a>
-                                        <a href="../ZZYM/zzym.html">预览</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>
-                                        <span>
-                                        表单域标签的宽度，作为 Form 直接子元素的
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                        </span>
-                                     </td>
-                                    <td>2019-09-10</td>
-                                    <td>财经</td>
-                                    <td>小兰</td>
-                                    <td>
-                                        <a href="../Fbwz/Fbwz.html"></a>
-                                        <a href="../Fbwz/Fbwz.html">编辑</a>
-                                        <a href="#"></a>
-                                        <a href="../ZZYM/zzym.html">预览</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>
-                                        <span>
-                                            表单域标签的宽度，作为 Form 直接子元素的
-                                        </span>
-                                    </td>
-                                    <td>2019-09-10</td>
-                                    <td>财经</td>
-                                    <td>小兰</td>
-                                    <td>
-                                        <a href="../Fbwz/Fbwz.html"></a>
-                                        <a href="../Fbwz/Fbwz.html">编辑</a>
-                                        <a href="#"></a>
-                                        <a href="../ZZYM/zzym.html">预览</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mRtt">
-                        <div class="mRtto">
-                            <span class="quanx">全选</span>
-                            <span class="qux">取消</span>
-                            <span>增加属性</span>
-                            <span>删除属性</span>
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="../Fbwz/Fbwz.html"></a>
+                                            <a href="../Fbwz/Fbwz.html">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="#"></a>
+                                            <a href="#">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                                
+                            </table>
                         </div>
-                        <div class="mRttt">
-                            <!-- 分页 -->
-                            <div class="m-style M-box11"></div>
+                        <div class="mRtt">
+                            <div class="mRtto">
+                                <span class="quanx">全选</span>
+                                <span class="qux">取消</span>
+                                <!-- <span>增加属性</span>
+                                <span>删除属性</span> -->
+                            </div>
+                            <div class="mRttt">
+                                <!-- 分页 -->
+                                <div class="m-style M-box11"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mRt" id="one">
+                        <div class="mRto" id="oneo">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>选择</td>
+                                        <td>文章标题</td>
+                                        <td>发布时间</td>
+                                        <td>所属栏目</td>
+                                        <td>发布人</td>
+                                        <td>操作</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                            haah表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                            </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="../Fbwz/Fbwz.html"></a>
+                                            <a href="../Fbwz/Fbwz.html">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="#"></a>
+                                            <a href="#">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        <div class="mRtt">
+                            <div class="mRtto">
+                                <span class="quanx">全选</span>
+                                <span class="qux">取消</span>
+                                <!-- <span>增加属性</span>
+                                <span>删除属性</span> -->
+                            </div>
+                            <div class="mRttt">
+                                <!-- 分页 -->
+                                <div class="m-style M-box12"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mRt" id="two">
+                        <div class="mRto" id="twot">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>选择</td>
+                                        <td>文章标题</td>
+                                        <td>发布时间</td>
+                                        <td>所属栏目</td>
+                                        <td>发布人</td>
+                                        <td>操作</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                            gaga表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                            </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="../Fbwz/Fbwz.html"></a>
+                                            <a href="../Fbwz/Fbwz.html">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="#"></a>
+                                            <a href="#">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        <div class="mRtt">
+                            <div class="mRtto">
+                                <span class="quanx">全选</span>
+                                <span class="qux">取消</span>
+                                <!-- <span>增加属性</span>
+                                <span>删除属性</span> -->
+                            </div>
+                            <div class="mRttt">
+                                <!-- 分页 -->
+                                <div class="m-style M-box13"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mRt" id="three">
+                        <div class="mRto" id="threeth">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>选择</td>
+                                        <td>文章标题</td>
+                                        <td>发布时间</td>
+                                        <td>所属栏目</td>
+                                        <td>发布人</td>
+                                        <td>操作</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                            表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                            </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="../Fbwz/Fbwz.html"></a>
+                                            <a href="../Fbwz/Fbwz.html">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td>2019-09-10</td>
+                                        <td>财经</td>
+                                        <td>小兰</td>
+                                        <td>
+                                            <a href="#"></a>
+                                            <a href="#">编辑</a>
+                                            <a href="#"></a>
+                                            <a href="../ZZYM/zzym.html">预览</a>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        <div class="mRtt">
+                            <div class="mRtto">
+                                <span class="quanx">全选</span>
+                                <span class="qux">取消</span>
+                                <!-- <span>增加属性</span>
+                                <span>删除属性</span> -->
+                            </div>
+                            <div class="mRttt">
+                                <!-- 分页 -->
+                                <div class="m-style M-box14"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mRt" id="four">
+                        <div class="mRto" id="fourf">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>选择</td>
+                                        <td>文章标题</td>
+                                        <td>发布时间</td>
+                                        <td>所属栏目</td>
+                                        <td>发布人</td>
+                                        <td>操作</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                            表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td>
+                                            <span>
+                                                表单域标签的宽度，作为 Form 直接子元素的
+                                            </span>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        <div class="mRtt">
+                            <div class="mRtto">
+                                <span class="quanx">全选</span>
+                                <span class="qux">取消</span>
+                                <!-- <span>增加属性</span>
+                                <span>删除属性</span> -->
+                            </div>
+                            <div class="mRttt">
+                                <!-- 分页 -->
+                                <div class="m-style M-box15"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

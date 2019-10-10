@@ -23,26 +23,24 @@
     </div>
     <div class="login">
         <h1>管理员登录</h1><br>
-        <input type="text" placeholder="请输入用户名" autofocus="autofocus"><br>
+        <input type="text" placeholder="请输入用户名" autofocus="autofocus" autocomplete><br>
         <input type="password" name="" id="" placeholder="请输入用户密码"><br>
         <button type="button">登录</button>
     </div>
 
     <script>
         $(function(){
+            var username=window.localStorage.getItem("username");
+            var password=window.localStorage.getItem("password");
+            if(username&&password){
+                $("input[type=text]").val(username);
+                $("input[type=password]").val(password);
+            }
             $("button[type=button]").click(function(){
 
                 var userName=$("input[type=text]").val().trim();
                 var passWord=$("input[type=password]").val();
-                // console.log(userName+passWord);
-
-                // window.sessionStorage.setItem("username",userName);
-                // window.sessionStorage.setItem("password",passWord);
                 
-                // var u=window.sessionStorage.getItem("username");
-                // var p=window.sessionStorage.getItem("password");
-                // console.log(u+p);
-
                 $.ajax({
                     type:"post",
                     url:"http://192.168.0.171:8080/WSHD/login",
@@ -57,6 +55,8 @@
                             window.location.href="./html/Wzlb/Wzlb.html";
                             window.sessionStorage.setItem("username",userName);
                             window.sessionStorage.setItem("password",passWord);
+                            window.localStorage.setItem("username",userName);
+                            window.localStorage.setItem("password",passWord);
                         }else{
                             alert("用户名或者密码错误")
                         }
@@ -64,16 +64,11 @@
                 });
             });
             //键盘抬起事件
-            $("input[type=password]").keyup(function(e){
+            $("input").keyup(function(e){
                 if (e.keyCode === 13){
                     var userName=$("input[type=text]").val().trim();
                     var passWord=$("input[type=password]").val();
-                    // console.log(userName+passWord);
-
-                    // window.sessionStorage.setItem("username",userName);
-                    // window.sessionStorage.setItem("password",passWord);
-                    // var username=window.sessionStorage.getItem("username")
-                    // console.log(username)
+                    
                     $.ajax({
                         type:"post",
                         url:"http://192.168.0.171:8080/WSHD/login",
@@ -88,6 +83,8 @@
                                 window.location.href="./html/Wzlb/Wzlb.html";
                                 window.sessionStorage.setItem("username",userName);
                                 window.sessionStorage.setItem("password",passWord);
+                                window.localStorage.setItem("username",userName);
+                                window.localStorage.setItem("password",passWord);
                             }else{
                                 alert("用户名或者密码错误")
                             }

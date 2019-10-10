@@ -11,7 +11,6 @@ $(function(){
 
     //加粗
     $("span.jiac").click(function(){
-        // $("input.")
     });
 
     
@@ -25,14 +24,14 @@ $(function(){
             $("span.zsj").addClass("ac");
         }
     });
-    $("div.mRofith").click(function(){
-        $("div.flb").toggle();
-        if($("span.flm").hasClass("ac")){
-            $("span.flm").removeClass("ac");
-        }else{
-            $("span.flm").addClass("ac");
-        }
-    });
+    // $("div.mRofith").click(function(){
+    //     $("div.flb").toggle();
+    //     if($("span.flm").hasClass("ac")){
+    //         $("span.flm").removeClass("ac");
+    //     }else{
+    //         $("span.flm").addClass("ac");
+    //     }
+    // });
     //点击空白处隐藏主栏目下拉菜单
     $(document).click(function(event){
         var _con = $(".mRofit");  // 设置失效目标区域
@@ -41,12 +40,12 @@ $(function(){
         }
     });
     //点击空白处隐藏副栏目下拉菜单
-    $(document).click(function(event){
-        var _con = $(".mRofith");  // 设置失效目标区域
-        if(!_con.is(event.target) && _con.has(event.target).length === 0){
-            $("div.flb").css("display","none");
-        }
-    });
+    // $(document).click(function(event){
+    //     var _con = $(".mRofith");  // 设置失效目标区域
+    //     if(!_con.is(event.target) && _con.has(event.target).length === 0){
+    //         $("div.flb").css("display","none");
+    //     }
+    // });
     var sslm;
     //点击选取具体主栏目
     $("div.zlb>div span").click(function(){
@@ -63,18 +62,80 @@ $(function(){
         }
     });
     //点击选取具体副栏目
-    $("div.flb>div span").click(function(){
-        // console.log(132);
-        $("div.mRofith").children().eq(0).html($(this).html());
-        $("div.flb").toggle();
-        if($("span.flm").hasClass("ac")){
-            $("span.flm").removeClass("ac");
+    // $("div.flb>div span").click(function(){
+    //     // console.log(132);
+    //     $("div.mRofith").children().eq(0).html($(this).html());
+    //     $("div.flb").toggle();
+    //     if($("span.flm").hasClass("ac")){
+    //         $("span.flm").removeClass("ac");
+    //     }else{
+    //         $("span.flm").addClass("ac");
+    //     }
+    // });
+
+    //幻灯文章地区
+    //点击选取幻灯文章主栏目副栏目
+    $("div.mRost").click(function(){
+        $("div.szlb").toggle();
+        // $("span.zsj").addClass("ac")
+        if($("span.szsj").hasClass("ac")){
+            $("span.szsj").removeClass("ac");
         }else{
-            $("span.flm").addClass("ac");
+            $("span.szsj").addClass("ac");
         }
     });
-
-
+    $("div.mRosth").click(function(){
+        $("div.sflb").toggle();
+        if($("span.sflm").hasClass("ac")){
+            $("span.sflm").removeClass("ac");
+        }else{
+            $("span.sflm").addClass("ac");
+        }
+    });
+    //点击空白处隐藏取幻灯文章主栏目下拉菜单
+    $(document).click(function(event){
+        var _con = $(".mRost");  // 设置失效目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){
+            $("div.szlb").css("display","none");
+        }
+    });
+    //点击空白处隐藏副栏目取幻灯文章下拉菜单
+    $(document).click(function(event){
+        var _con = $(".mRosth");  // 设置失效目标区域
+        if(!_con.is(event.target) && _con.has(event.target).length === 0){
+            $("div.sflb").css("display","none");
+        }
+    });
+    var style,style_id,sarticleId;
+    //点击选取具体主栏目取幻灯文章
+    $("div.szlb>div span").click(function(){
+        style=$(this).attr("data-ia");
+        console.log(style);
+        $(this).addClass("acc");
+        $(this).parent().siblings().children().removeClass("acc");
+        // sslm=$(this).attr("data-id");
+        // console.log(sslm);
+        $("div.mRost").children().eq(0).html($(this).html());
+        $("div.szlb").toggle();
+        if($("span.szsj").hasClass("ac")){
+            $("span.szsj").removeClass("ac");
+        }else{
+            $("span.szsj").addClass("ac");
+        }
+    });
+    //点击选取具体副栏目取幻灯文章
+    $("div.sflb>div span").click(function(){
+        style_id=$(this).attr("data-ib");
+        console.log(style_id);
+        // console.log(132);
+        $("div.mRosth").children().eq(0).html($(this).html());
+        $("div.sflb").toggle();
+        if($("span.sflm").hasClass("ac")){
+            $("span.sflm").removeClass("ac");
+        }else{
+            $("span.sflm").addClass("ac");
+        }
+    });
 
 
 
@@ -123,12 +184,37 @@ $(function(){
                 }
 
     });
-    
-           
-    
-
-
-
+    //点击发布幻灯文章
+    $("button.fbHD").click(function(){
+        // console.log(style+style_id+id)
+        if(style&&style_id){
+            $.ajax({
+                type:"post",
+                url:"http://192.168.0.171:8080/WSHD/jiekou7/huanDengImage",
+                dataType:"JSON",
+                data:{
+                    style:style,
+                    id:style_id,
+                    articleId:id
+                },
+                success:function(res){
+                    // if(style!=NaN&&style_id!=NaN&&id){
+                        if(res.code==200){
+                            console.log(res)
+                            alert("发布成功");
+                            window.location.href="../Wzlb/Wzlb.html";
+                        }else{
+                            alert("发布失败，请检查输入选项")
+                        }
+                    
+                    
+                }
+            })
+        }else{
+            alert("请选择幻灯所属栏目和位置")
+        }
+    });
+      
     // 分页数据
     $('.M-box11').pagination(
         {mode: 'fixed'});

@@ -475,6 +475,140 @@
     line-height: 35px;
     cursor: pointer;
 }
+
+/* 幻灯文章 */
+.c .mainR .mRo .mRos{
+    display: flex;
+    margin-top: 20px;
+    line-height: 60px;
+}
+.c .mainR .mRo .mRos .mRoso{
+    width: 160px;
+    height: 60px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.c .mainR .mRo .mRos .mRost{
+    width: 160px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-left: 10px;
+}
+.c .mainR .mRo .mRos .mRost span:last-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.c .mainR .mRo .mRos .mRost span.ac{
+    transform: rotate(180deg);
+    transition: all .6s;
+}
+.c .mainR .mRo .mRos .mRosth{
+    width: 160px;
+    line-height: 60px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-left: 15px;
+}
+.c .mainR .mRo .mRos .mRost span{
+    cursor: pointer;
+}
+.c .mainR .mRo .mRos .mRost span:first-child{
+    display: inline-block;
+    width: 96px;
+    height: 21px;
+    text-align: center;
+}
+.c .mainR .mRo .mRos .mRosth span:last-child{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #ccc;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.c .mainR .mRo .mRos .mRosth span{
+    cursor: pointer;
+}
+.c .mainR .mRo .mRos .mRosth span:first-child{
+    display: inline-block;
+    width: 96px;
+    height: 21px;
+    text-align: center;
+}
+.c .mainR .mRo .mRos .mRosth span.ac{
+    transform: rotate(180deg);
+    transition: all .6s;
+}
+.c .mainR .mRo .mRos .sc1 .szlb{
+    width: 160px;
+    height: 90px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 10px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+}
+.c .mainR .mRo .mRos .sc1 .szlb>div:hover{
+    background-color: #F2F2F2;
+}
+.c .mainR .mRo .mRos .sc1 .szlb>div{
+    padding-left: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+.c .mainR .mRo .mRos .sc1 .szlb>div:last-child{
+    border-bottom:none;
+}
+.c .mainR .mRo .mRos .sc1 .szlb>div span{
+    display: inline-block;
+    width: 130px;
+    line-height: 35px;
+    cursor: pointer;
+}
+.c .mainR .mRo .mRos .sc2 .sflb{
+    width: 160px;
+    height: 90px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 15px;
+    line-height: 35px;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background-color: #fff;
+}
+.c .mainR .mRo .mRos .sc2 .sflb>div:hover{
+    background-color: #F2F2F2;
+}
+.c .mainR .mRo .mRos .sc2 .sflb>div{
+    padding-left: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+.c .mainR .mRo .mRos .sc2 .sflb>div:last-child{
+    border-bottom:none;
+}
+.c .mainR .mRo .mRos .sc2 .sflb>div span{
+    display: inline-block;
+    width: 130px;
+    line-height: 35px;
+    cursor: pointer;
+}
+
 /* 主体站内选择部分 */
 .c .mainR .zn{
     width: 1700px;
@@ -859,7 +993,16 @@
     border-radius: 3px;
     font-size: 28px;
 }
-
+.c .mainR .mRt .mRtf button{
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    background-color: #046EB8;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 28px;
+    margin-right: 15px;
+}
 
 
 

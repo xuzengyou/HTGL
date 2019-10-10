@@ -26,6 +26,7 @@ $(function(){
     lastPost=null,ownerTag=null,ownerRemark=null,htmlPath=null,
     filesPath=null,tempPath=null,thumb,htmlStatus=null,
     articleStatus=null,tableName=null,content;
+    
     //获取对应文章内容
     $.ajax({
         
@@ -40,34 +41,8 @@ $(function(){
                 console.log(res);
                 $("input.wzbt").val(res.data.title);
                 editor.html(res.data.content);
-                
-                //点击发布普通文章
-                $("button.fb").click(function(){
-
-                    title=$("input.wzbt").val(),
-                    articleId=res.data.articleId,sortId=res.data.sortId,intro=res.data.intro,author=res.data.author,copyfrom=res.data.copyfrom,
-                    httpUrl=res.data.httpUrl,content=editor.html();
-                
-                var record=JSON.stringify({
-                    aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
-                    lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
-                })
-                    $.ajax({
-                        type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Update",
-                        dataType:"json",
-                        contentType:"application/json;charset=UTF-8",
-                        data:record,
-                        success:function(res){
-                            alert("发布成功");
-                            window.location.href="../Wzlb/Wzlb.html"
-                        }
-                    })
-
-                });
-
             }else{
-                console.log("出错啦")
+                console.log("出错啦");
             }
             
 
@@ -132,8 +107,8 @@ $(function(){
                                         html+="<input type=checkbox>";
                                     html+="</td>";
                                     html+="<td>";
-                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+"></span>";
-                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+">"+res.data[i].imageName+"</span>";
+                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+" data-id="+res.data[i].iid+"></span>";
+                                        html+="<span data-cls="+res.data[i].imageUrl+" class="+res.data[i].folderName+" data-id="+res.data[i].iid+">"+res.data[i].imageName+"</span>";
                                     html+="</td>";
                                     html+="<td>"+res.data[i].imageSize+"k"+"</td>";
                                     html+="<td>"+res.data[i].imageTime+"</td>";
@@ -172,6 +147,34 @@ $(function(){
                                 };
                                 foldeDg=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
                                 filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
+
+
+                                //点击发布普通文章
+                                $("button.fb").click(function(){
+                                    thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                    console.log(thumb);             
+                                    title=$("input.wzbt").val(),
+                                    articleId=res.data.articleId,sortId=res.data.sortId,intro=res.data.intro,author=res.data.author,copyfrom=res.data.copyfrom,
+                                    httpUrl=res.data.httpUrl,content=editor.html();
+
+                                var record=JSON.stringify({
+                                    aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
+                                    lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
+                                })
+                                    $.ajax({
+                                        type:"post",
+                                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Update",
+                                        dataType:"json",
+                                        contentType:"application/json;charset=UTF-8",
+                                        data:record,
+                                        success:function(res){
+                                            alert("发布成功");
+                                            window.location.href="../Wzlb/Wzlb.html"
+                                        }
+                                    })
+
+                                });
+
                             });
             
                             //点击删除图片
@@ -188,26 +191,41 @@ $(function(){
                                             filename:filename
                                         },
                                         success:function(){
-                                            alert("删除图片成功")
+                                            alert("删除图片成功");
                                         }
                                     });
                                 }else{
-                                    alert("请选择图片")
+                                    alert("请选择图片");
                                 }
                             });
                             // 点击上传图片
                             $("span.shangch").click(function(){
-                                thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
-                                
+                                thum=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                shangcid=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-id");
                                 var ac=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:first-child input").is(":checked");
-                                console.log(ac)
+                                console.log(ac+thum+shangcid);
                                 if(ac){
                                     $(this).addClass("ac");
                                     $(this).html("上传成功");
                                     $(".c .mainR .zn .zNr .zNro table tbody tr.ac").css("display","none");
                                 }else{
-                                    alert("请选择图片")
-                                }
+                                    alert("请选择图片");
+                                };
+
+                                $.ajax({
+                                    type:"post",
+                                    url:"http://192.168.0.171:8080/WSHD/jiekou7/selectImage1",
+                                    dataType:"JSON",
+                                    data:{
+                                        id:shangcid
+                                    },
+                                    success:function(){
+                                        
+                                    }
+                                });
+
+
+
                             });
                             //分页第二页开始
                             $('.M-box11').pagination({
@@ -265,6 +283,34 @@ $(function(){
                                                 };
                                                 foldeDg=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:first-child").attr("class");
                                                 filename=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span:last-child").html();
+
+                                                //点击发布普通文章
+                                                $("button.fb").click(function(){
+                                                    thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
+                                                    console.log(thumb);             
+                                                    title=$("input.wzbt").val(),
+                                                    articleId=res.data.articleId,sortId=res.data.sortId,intro=res.data.intro,author=res.data.author,copyfrom=res.data.copyfrom,
+                                                    httpUrl=res.data.httpUrl,content=editor.html();
+
+                                                var record=JSON.stringify({
+                                                    aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
+                                                    lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
+                                                })
+                                                    $.ajax({
+                                                        type:"post",
+                                                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Update",
+                                                        dataType:"json",
+                                                        contentType:"application/json;charset=UTF-8",
+                                                        data:record,
+                                                        success:function(res){
+                                                            alert("发布成功");
+                                                            window.location.href="../Wzlb/Wzlb.html"
+                                                        }
+                                                    })
+
+                                                });
+
+
                                             });
                                             //点击删除图片
                                             $("span.shanc").click(function(){
@@ -320,7 +366,7 @@ $(function(){
             $("span.New").click(function(){
                                 
                 var foldXj=$("input.wjjsc").val().trim();
-                if(fold){
+                if(foldXj){
                     $.ajax({
                         type:"post",
                         url:"http://192.168.0.171:8080/WSHD/jiekou7/insertFolder",
@@ -528,9 +574,9 @@ $(function(){
 
         //  console.log(reader.readAsDataURL(file))
         //        当文件阅读结束后执行的方法
-        // var foldYd=$("div.zNlt ul li.gg span").attr("data-cls");
-        var foldYd=2;
-        console.log(foldYd);
+        var foldYd=$("div.zNlt ul li.gg span").attr("data-cls");
+        // var foldYd=2;
+        // console.log(foldYd);
         if(foldYd){
             reader.addEventListener('load',function () {
                 //         如果说让读取的文件显示的话 还是需要通过文件的类型创建不同的标签
@@ -626,7 +672,7 @@ $(function(){
         $("span.shij").html(getNowFormatDate());
         
 
-        //点击发布幻灯文章
+    //点击发布幻灯文章
     $("button.fbHD").click(function(){
         // console.log(style+style_id+id)
         if(style&&style_id){
@@ -655,7 +701,7 @@ $(function(){
         }else{
             alert("请选择幻灯所属栏目和位置")
         }
-    })
+    });
         
 
 

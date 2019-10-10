@@ -147,7 +147,7 @@
 .c .mainR{
     width: 1750px;
     margin-top: 130px;
-    margin-left: 190px;
+    margin-left: 205px;
 }
 /* 主体右边第一部分开始 */
 .c .mainR .mRo{
@@ -194,7 +194,7 @@
 }
 .c .mainR .mRo .mRot .lxC .lxCt{
     width: 125px;
-    height: 75px;
+    height: 100px;
     overflow-y: scroll;
     border: 1px solid #ccc;
     position: absolute;
@@ -293,6 +293,10 @@
 .c .mainR .mRt{
     width: 1700px;
     margin-top: 10px;
+    display: none;
+}
+.c .mainR .mRt.ac{
+    display: block;
 }
 .c .mainR .mRt .mRto{
     width: 1700px;
