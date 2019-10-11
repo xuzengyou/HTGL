@@ -665,8 +665,10 @@
 }
 .c .mainR .mRt .mRtt .mRttf .cxw span{
     display: inline-block;
-    width: 90px;
+    width: 115px;
+    height: 120px;
     line-height: 120px;
+    overflow: hidden;
     font-size: 28px;
     vertical-align: middle;
     text-align: center;
@@ -722,8 +724,10 @@
 }
 .c .mainR .mRt .mRtt .mRttf .czx span{
     display: inline-block;
-    width: 120px;
+    width: 170px;
+    height: 120px;
     line-height: 120px;
+    overflow: hidden;
     font-size: 28px;
     vertical-align: middle;
     text-align: center;
@@ -843,8 +847,10 @@
 }
 .c .mainR .mRt .mRtt .mRttfi .cgp span{
     display: inline-block;
-    width: 90px;
+    width: 115px;
+    height: 120px;
     line-height: 120px;
+    overflow: hidden;
     font-size: 28px;
     vertical-align: middle;
     text-align: center;

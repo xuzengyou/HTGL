@@ -41,10 +41,46 @@ $(function(){
                 console.log(res);
                 $("input.wzbt").val(res.data.title);
                 editor.html(res.data.content);
+                if(res.data.thumb){
+                    $("input.lj").val(res.data.thumb);
+                }else{
+                    $("input.lj").val("");
+                }
             }else{
                 console.log("出错啦");
             }
-            
+            //点击发布普通文章
+            if(!$("input.lj").val()){
+                console.log($("input.lj").val());
+                $("button.fb").click(function(){
+                    alert("请先选择图片")
+                })
+            }else{
+                console.log($("input.lj").val());
+                $("button.fb").click(function(){
+                    thumb=res.data.thumb;
+                    console.log(thumb);
+                    title=$("input.wzbt").val(),
+                    articleId=res.data.articleId,sortId=res.data.sortId,intro=res.data.intro,author=res.data.author,copyfrom=res.data.copyfrom,
+                    httpUrl=res.data.httpUrl,content=editor.html();
+
+                    var record=JSON.stringify({
+                        aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
+                        lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
+                    });
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Update",
+                        dataType:"json",
+                        contentType:"application/json;charset=UTF-8",
+                        data:record,
+                        success:function(res){
+                            alert("发布成功");
+                            // window.location.href="../Wzlb/Wzlb.html"
+                        }
+                    })
+                })
+            }
 
         }
     });
@@ -78,6 +114,8 @@ $(function(){
             }else{
                 console.log("出错啦")
             };
+
+            
 
             //点击文件夹获取相应图片
             $("div.zNlt ul li span").click(function(){
@@ -152,15 +190,15 @@ $(function(){
                                 //点击发布普通文章
                                 $("button.fb").click(function(){
                                     thumb=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
-                                    console.log(thumb);             
+                                    console.log(thumb);
                                     title=$("input.wzbt").val(),
                                     articleId=res.data.articleId,sortId=res.data.sortId,intro=res.data.intro,author=res.data.author,copyfrom=res.data.copyfrom,
                                     httpUrl=res.data.httpUrl,content=editor.html();
 
-                                var record=JSON.stringify({
-                                    aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
-                                    lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
-                                })
+                                    var record=JSON.stringify({
+                                        aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
+                                        lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
+                                    });
                                     $.ajax({
                                         type:"post",
                                         url:"http://192.168.0.171:8080/WSHD/jiekou6/Update",

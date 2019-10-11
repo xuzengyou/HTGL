@@ -49,15 +49,7 @@ $(function(){
 
     });
 
-    // 点击选中和取消选中
-    $("span.quanx").click(function(){
-        $("div.mRto table tbody tr td:first-child input").prop("checked",true);
-        $("div.mRto table tbody tr").addClass("ac");
-    });
-    $("span.qux").click(function(){
-        $("div.mRto table tbody tr td:first-child input").prop("checked",false);
-        $("div.mRto table tbody tr").removeClass("ac");
-    });
+    
     
     
     
@@ -101,8 +93,8 @@ $(function(){
 
                 $("#zz table tbody").html(html);
 
-                //点击删除增加
-                $("div.mRto table tbody tr td input").click(function(){
+                //点击删除
+                $("#zz table tbody tr td input").click(function(){
                     console.log($(this).attr("data-cls"));
                     if($(this).parent().parent().hasClass("ac")){
                         $(this).parent().parent().removeClass("ac");
@@ -110,23 +102,32 @@ $(function(){
                         $(this).parent().parent().addClass("ac");
                     }
                     var id=$(this).attr("data-cls");
-                    $.ajax({
-                        type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                        dataType:"JSON",
-                        data:{
-                            id:id
-                        },
-                        success:function(res){
-                            console.log(res)
-                        }
-
+                    $("span.schu").click(function(){
+                        $.ajax({
+                            type:"post",
+                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                            dataType:"JSON",
+                            data:{
+                                id:id
+                            },
+                            success:function(res){
+                                console.log(res)
+                            }
+    
+                        });
+                        $("table tbody tr.acc").remove();
                     });
+                    
 
                 });
-                $("span.schu").click(function(){
-
-                    $("div.mRto table tbody tr.ac").remove();
+                // 点击选中和取消选中
+                $("span.quanx").click(function(){
+                    $("#zz table tbody tr td:first-child input").prop("checked",true);
+                    $("#zz table tbody tr").addClass("ac");
+                });
+                $("span.qux").click(function(){
+                    $("#zz table tbody tr td:first-child input").prop("checked",false);
+                    $("#zz table tbody tr").removeClass("ac");
                 });
 
             }
@@ -170,10 +171,10 @@ $(function(){
                                     html+="</tr>";
                     
                     
-                                    $("div.mRto table tbody").html(html);
+                                    $("#zz table tbody").html(html);
                     
-                                    //点击删除增加
-                                    $("div.mRto table tbody tr td input").click(function(){
+                                    //点击删除
+                                    $("#zz table tbody tr td input").click(function(){
                                         console.log($(this).attr("data-cls"));
                                         if($(this).parent().parent().hasClass("ac")){
                                             $(this).parent().parent().removeClass("ac");
@@ -181,23 +182,32 @@ $(function(){
                                             $(this).parent().parent().addClass("ac");
                                         }
                                         var id=$(this).attr("data-cls");
-                                        $.ajax({
-                                            type:"post",
-                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                                            dataType:"JSON",
-                                            data:{
-                                                id:id
-                                            },
-                                            success:function(res){
-                                                console.log(res)
-                                            }
-                    
+                                        $("span.schu").click(function(){
+                                            $.ajax({
+                                                type:"post",
+                                                url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                                dataType:"JSON",
+                                                data:{
+                                                    id:id
+                                                },
+                                                success:function(res){
+                                                    console.log(res)
+                                                }
+                        
+                                            });
+                                            $("table tbody tr.acc").remove();
                                         });
-                    
+                                        
+
                                     });
-                                    $("span.schu").click(function(){
-                    
-                                        $("#zz table tbody tr.ac").remove();
+                                    // 点击选中和取消选中
+                                    $("span.quanx").click(function(){
+                                        $("#zz table tbody tr td:first-child input").prop("checked",true);
+                                        $("#zz table tbody tr").addClass("ac");
+                                    });
+                                    $("span.qux").click(function(){
+                                        $("#zz table tbody tr td:first-child input").prop("checked",false);
+                                        $("#zz table tbody tr").removeClass("ac");
                                     });
                     
                                 }
@@ -214,6 +224,7 @@ $(function(){
 // 页面打开财经文章分页数据
 $('.M-box12').pagination(
     {mode: 'fixed'});
+    $("#oneo table tbody").html("");
 function loadData1(page) {
     $.ajax({
         type: "post",
@@ -252,7 +263,7 @@ function loadData1(page) {
 
             $("#oneo table tbody").html(html);
 
-            //点击删除增加
+            //点击删除
             $("table tbody tr td input").click(function(){
                 console.log($(this).attr("data-cls"));
                 if($(this).parent().parent().hasClass("ac")){
@@ -261,24 +272,34 @@ function loadData1(page) {
                     $(this).parent().parent().addClass("ac");
                 }
                 var id=$(this).attr("data-cls");
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                    dataType:"JSON",
-                    data:{
-                        id:id
-                    },
-                    success:function(res){
-                        console.log(res)
-                    }
-
+                $("span.schu").click(function(){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        dataType:"JSON",
+                        data:{
+                            id:id
+                        },
+                        success:function(res){
+                            console.log(res)
+                        }
+    
+                    });
+                    $("table tbody tr.ac").remove();
                 });
+                
 
             });
-            $("span.schu").click(function(){
-
-                $("table tbody tr.ac").remove();
+            // 点击选中和取消选中
+            $("span.quanxcj").click(function(){
+                $("#oneo table tbody tr td:first-child input").prop("checked",true);
+                $("#oneo table tbody tr").addClass("ac");
             });
+            $("span.quxcj").click(function(){
+                $("#oneo table tbody tr td:first-child input").prop("checked",false);
+                $("#oneo table tbody tr").removeClass("ac");
+            });
+            
 
         }
             // $('.main_content').html()
@@ -333,23 +354,33 @@ function loadData1(page) {
                                         $(this).parent().parent().addClass("ac");
                                     }
                                     var id=$(this).attr("data-cls");
-                                    $.ajax({
-                                        type:"post",
-                                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                                        dataType:"JSON",
-                                        data:{
-                                            id:id
-                                        },
-                                        success:function(res){
-                                            console.log(res)
-                                        }
-                
+                                    $("span.schu").click(function(){
+                                        $.ajax({
+                                            type:"post",
+                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            dataType:"JSON",
+                                            data:{
+                                                id:id
+                                            },
+                                            success:function(res){
+                                                console.log(res)
+                                            }
+                    
+                                        });
+                                        $("table tbody tr.ac").remove();
                                     });
+                                    
                 
                                 });
-                                $("span.schu").click(function(){
-                
-                                    $("table tbody tr.ac").remove();
+                                
+                                // 点击选中和取消选中
+                                $("span.quanxcj").click(function(){
+                                    $("#oneo table tbody tr td:first-child input").prop("checked",true);
+                                    $("#oneo table tbody tr").addClass("ac");
+                                });
+                                $("span.quxcj").click(function(){
+                                    $("#oneo table tbody tr td:first-child input").prop("checked",false);
+                                    $("#oneo table tbody tr").removeClass("ac");
                                 });
                 
                             }
@@ -366,6 +397,7 @@ loadData1(1);
 // 页面打开股票文章分页数据
 $('.M-box13').pagination(
     {mode: 'fixed'});
+    $("#twot table tbody").html("");
 function loadData2(page) {
     $.ajax({
         type: "post",
@@ -404,7 +436,7 @@ function loadData2(page) {
 
             $("#twot table tbody").html(html);
 
-            //点击删除增加
+            //点击删除
             $("table tbody tr td input").click(function(){
                 console.log($(this).attr("data-cls"));
                 if($(this).parent().parent().hasClass("ac")){
@@ -413,23 +445,32 @@ function loadData2(page) {
                     $(this).parent().parent().addClass("ac");
                 }
                 var id=$(this).attr("data-cls");
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                    dataType:"JSON",
-                    data:{
-                        id:id
-                    },
-                    success:function(res){
-                        console.log(res)
-                    }
+                $("span.schu").click(function(){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        dataType:"JSON",
+                        data:{
+                            id:id
+                        },
+                        success:function(res){
+                            console.log(res)
+                        }
 
+                    });
+                    $("table tbody tr.ac").remove();
                 });
+                
 
+            });//点击删除结束
+            // 点击选中和取消选中
+            $("span.quanxgp").click(function(){
+                $("#twot table tbody tr td:first-child input").prop("checked",true);
+                $("#twot table tbody tr").addClass("ac");
             });
-            $("span.schu").click(function(){
-
-                $("table tbody tr.ac").remove();
+            $("span.quxgp").click(function(){
+                $("#twot table tbody tr td:first-child input").prop("checked",false);
+                $("#twot table tbody tr").removeClass("ac");
             });
 
         }
@@ -476,7 +517,7 @@ function loadData2(page) {
                 
                                 $("#twot table tbody").html(html);
                 
-                                //点击删除增加
+                                //点击删除
                                 $("table tbody tr td input").click(function(){
                                     console.log($(this).attr("data-cls"));
                                     if($(this).parent().parent().hasClass("ac")){
@@ -485,23 +526,32 @@ function loadData2(page) {
                                         $(this).parent().parent().addClass("ac");
                                     }
                                     var id=$(this).attr("data-cls");
-                                    $.ajax({
-                                        type:"post",
-                                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                                        dataType:"JSON",
-                                        data:{
-                                            id:id
-                                        },
-                                        success:function(res){
-                                            console.log(res)
-                                        }
-                
+                                    $("span.schu").click(function(){
+                                        $.ajax({
+                                            type:"post",
+                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            dataType:"JSON",
+                                            data:{
+                                                id:id
+                                            },
+                                            success:function(res){
+                                                console.log(res)
+                                            }
+                    
+                                        });
+                                        $("table tbody tr.ac").remove();
                                     });
+                                    
                 
+                                });//点击删除结束
+                                // 点击选中和取消选中
+                                $("span.quanxgp").click(function(){
+                                    $("#twot table tbody tr td:first-child input").prop("checked",true);
+                                    $("#twot table tbody tr").addClass("ac");
                                 });
-                                $("span.schu").click(function(){
-                
-                                    $("table tbody tr.ac").remove();
+                                $("span.quxgp").click(function(){
+                                    $("#twot table tbody tr td:first-child input").prop("checked",false);
+                                    $("#twot table tbody tr").removeClass("ac");
                                 });
                 
                             }
@@ -556,7 +606,7 @@ function loadData3(page) {
 
             $("#threeth table tbody").html(html);
 
-            //点击删除增加
+            //点击删除
             $("table tbody tr td input").click(function(){
                 console.log($(this).attr("data-cls"));
                 if($(this).parent().parent().hasClass("ac")){
@@ -565,23 +615,32 @@ function loadData3(page) {
                     $(this).parent().parent().addClass("ac");
                 }
                 var id=$(this).attr("data-cls");
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                    dataType:"JSON",
-                    data:{
-                        id:id
-                    },
-                    success:function(res){
-                        console.log(res)
-                    }
+                $("span.schu").click(function(){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        dataType:"JSON",
+                        data:{
+                            id:id
+                        },
+                        success:function(res){
+                            console.log(res)
+                        }
 
+                    });
+                    $("table tbody tr.ac").remove();
                 });
+                
 
+            });//点击删除结束
+            // 点击选中和取消选中
+            $("span.quanxwh").click(function(){
+                $("#threeth table tbody tr td:first-child input").prop("checked",true);
+                $("#threeth table tbody tr").addClass("ac");
             });
-            $("span.schu").click(function(){
-
-                $("table tbody tr.ac").remove();
+            $("span.quxwh").click(function(){
+                $("#threeth table tbody tr td:first-child input").prop("checked",false);
+                $("#threeth table tbody tr").removeClass("ac");
             });
 
         }
@@ -628,7 +687,7 @@ function loadData3(page) {
                 
                                 $("#threeth table tbody").html(html);
                 
-                                //点击删除增加
+                                //点击删除
                                 $("table tbody tr td input").click(function(){
                                     console.log($(this).attr("data-cls"));
                                     if($(this).parent().parent().hasClass("ac")){
@@ -637,23 +696,32 @@ function loadData3(page) {
                                         $(this).parent().parent().addClass("ac");
                                     }
                                     var id=$(this).attr("data-cls");
-                                    $.ajax({
-                                        type:"post",
-                                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                                        dataType:"JSON",
-                                        data:{
-                                            id:id
-                                        },
-                                        success:function(res){
-                                            console.log(res)
-                                        }
-                
+                                    $("span.schu").click(function(){
+                                        $.ajax({
+                                            type:"post",
+                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            dataType:"JSON",
+                                            data:{
+                                                id:id
+                                            },
+                                            success:function(res){
+                                                console.log(res)
+                                            }
+                    
+                                        });
+                                        $("table tbody tr.ac").remove();
                                     });
+                                    
                 
+                                });//点击删除结束
+                                // 点击选中和取消选中
+                                $("span.quanxwh").click(function(){
+                                    $("#threeth table tbody tr td:first-child input").prop("checked",true);
+                                    $("#threeth table tbody tr").addClass("ac");
                                 });
-                                $("span.schu").click(function(){
-                
-                                    $("table tbody tr.ac").remove();
+                                $("span.quxwh").click(function(){
+                                    $("#threeth table tbody tr td:first-child input").prop("checked",false);
+                                    $("#threeth table tbody tr").removeClass("ac");
                                 });
                 
                             }
@@ -670,14 +738,14 @@ loadData3(1);
 // 页面打开幻灯文章分页数据
 $('.M-box15').pagination(
     {mode: 'fixed'});
+    $("#fourf table tbody").html("");
 function loadData4(page) {
     $.ajax({
         type: "post",
-        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+        url: "http://192.168.0.171:8080/WSHD/jiekou7/getHDarticle",
         data: {
-            style:3,
             page: page,
-            num: 21
+            num: 15
         },
         dataType: "JSON",
         success: function (res) {
@@ -685,31 +753,26 @@ function loadData4(page) {
         console.log(res)
         var html="";
         for(var i in res.data){
-            var url=res.data[i].httpUrl,id=res.data[i].articleId,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
-            var href1="../XFbwz/XFbwz.html";
+            var url=res.data[i].httpUrl,id=res.data[i].aid,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
+            
             html+="<tr>";
                 html+="<td>";
-                    html+="<input type=checkbox data-cls="+res.data[i].articleId+">";
+                    html+="<input type=checkbox data-cls="+res.data[i].aid+">";
                 html+="</td>";
                 html+="<td>";
-                    html+="<span>"+res.data[i].title+"</span>";
+                    html+="<span>"+res.data[i].articleTitle+"</span>";
                 html+="</td>";
-                html+="<td>"+res.data[i].addTime+"</td>";
-                html+="<td>"+res.data[i].sortId+"</td>";
-                html+="<td>"+res.data[i].author+"</td>";
-                html+="<td>";
-                    html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+"></a>";
-                    html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+">编辑&nbsp;&nbsp;</a>";
-                    html+="<a href="+href+"></an>";
-                    html+="<a href="+href+">预览</a>";
-                html+="</td>";
+                html+="<td></td>";
+                html+="<td></td>";
+                html+="<td></td>";
+                html+="<td></td>";
             html+="</tr>";
 
 
-            $("#threeth table tbody").html(html);
+            $("#fourf table tbody").html(html);
 
-            //点击删除增加
-            $("table tbody tr td input").click(function(){
+            //点击删除
+            $("#fourf table tbody tr td input").click(function(){
                 console.log($(this).attr("data-cls"));
                 if($(this).parent().parent().hasClass("ac")){
                     $(this).parent().parent().removeClass("ac");
@@ -717,71 +780,75 @@ function loadData4(page) {
                     $(this).parent().parent().addClass("ac");
                 }
                 var id=$(this).attr("data-cls");
-                $.ajax({
-                    type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                    dataType:"JSON",
-                    data:{
-                        id:id
-                    },
-                    success:function(res){
-                        console.log(res)
-                    }
-
+                
+                $("span.schu").click(function(){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou7/delHDarticle",
+                        dataType:"JSON",
+                        data:{
+                            id:id
+                        },
+                        success:function(res){
+                            console.log(res)
+                        }
+    
+                    });
+                    $("table tbody tr.ac").remove();
+                    // window.location.reload();
                 });
+                
 
+            });//删除结束
+            // 点击选中和取消选中
+            $("span.quanxhd").click(function(){
+                $("#fourf table tbody tr td:first-child input").prop("checked",true);
+                $("#fourf table tbody tr").addClass("ac");
             });
-            $("span.schu").click(function(){
-
-                $("table tbody tr.ac").remove();
+            $("span.quxhd").click(function(){
+                $("#fourf table tbody tr td:first-child input").prop("checked",false);
+                $("#fourf table tbody tr").removeClass("ac");
             });
+            
 
         }
             // $('.main_content').html()
-            $('.M-box14').pagination({
-                totalData: res.sum,
+            $('.M-box15').pagination({
                 showData: res.data.length,
                 current:page,
-                pageCount: 2,
+                pageCount: 1,
                 callback:function (res){
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+                        url: "http://192.168.0.171:8080/WSHD/jiekou7/getHDarticle",
                         data: {
-                            style:3,
                             page: page,
-                            num: 21
+                            num: 15
                         },
                         dataType: "JSON",
                         success: function (res) {
                             console.log(res)
                             var html="";
                             for(var i in res.data){
-                                var url=res.data[i].httpUrl,id=res.data[i].articleId,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
-                                var href1="../XFbwz/XFbwz.html";
+                                var url=res.data[i].httpUrl,id=res.data[i].aid,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
+                               
                                 html+="<tr>";
                                     html+="<td>";
-                                        html+="<input type=checkbox data-cls="+res.data[i].articleId+">";
+                                        html+="<input type=checkbox data-cls="+res.data[i].aid+">";
                                     html+="</td>";
                                     html+="<td>";
-                                        html+="<span>"+res.data[i].title+"</span>";
+                                        html+="<span>"+res.data[i].articleTitle+"</span>";
                                     html+="</td>";
-                                    html+="<td>"+res.data[i].addTime+"</td>";
-                                    html+="<td>"+res.data[i].sortId+"</td>";
-                                    html+="<td>"+res.data[i].author+"</td>";
-                                    html+="<td>";
-                                        html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+"></a>";
-                                        html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+">编辑&nbsp;&nbsp;</a>";
-                                        html+="<a href="+href+"></an>";
-                                        html+="<a href="+href+">预览</a>";
-                                    html+="</td>";
+                                    html+="<td></td>";
+                                    html+="<td></td>";
+                                    html+="<td></td>";
+                                    html+="<td></td>";
                                 html+="</tr>";
                 
                 
-                                $("#threeth table tbody").html(html);
-                
-                                //点击删除增加
-                                $("table tbody tr td input").click(function(){
+                                $("#fourf table tbody").html(html);
+                                    //点击删除
+                                $("#fourf table tbody tr td input").click(function(){
                                     console.log($(this).attr("data-cls"));
                                     if($(this).parent().parent().hasClass("ac")){
                                         $(this).parent().parent().removeClass("ac");
@@ -789,23 +856,33 @@ function loadData4(page) {
                                         $(this).parent().parent().addClass("ac");
                                     }
                                     var id=$(this).attr("data-cls");
-                                    $.ajax({
-                                        type:"post",
-                                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
-                                        dataType:"JSON",
-                                        data:{
-                                            id:id
-                                        },
-                                        success:function(res){
-                                            console.log(res)
-                                        }
-                
+                                    
+                                    $("span.schu").click(function(){
+                                        $.ajax({
+                                            type:"post",
+                                            url:"http://192.168.0.171:8080/WSHD/jiekou7/delHDarticle",
+                                            dataType:"JSON",
+                                            data:{
+                                                id:id
+                                            },
+                                            success:function(res){
+                                                console.log(res)
+                                            }
+                        
+                                        });
+                                        $("table tbody tr.ac").remove();
                                     });
-                
+                                    
+
+                                });//点击删除结束
+                                // 点击选中和取消选中
+                                $("span.quanxhd").click(function(){
+                                    $("#fourf table tbody tr td:first-child input").prop("checked",true);
+                                    $("#fourf table tbody tr").addClass("ac");
                                 });
-                                $("span.schu").click(function(){
-                
-                                    $("table tbody tr.ac").remove();
+                                $("span.quxhd").click(function(){
+                                    $("#fourf table tbody tr td:first-child input").prop("checked",false);
+                                    $("#fourf table tbody tr").removeClass("ac");
                                 });
                 
                             }
@@ -817,7 +894,7 @@ function loadData4(page) {
         }
     });
 }
-loadData4(1);
+loadData4(0);
 
 
 
