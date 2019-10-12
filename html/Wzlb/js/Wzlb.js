@@ -49,10 +49,6 @@ $(function(){
 
     });
 
-    
-    
-    
-    
     // 页面打开全部文章分页数据
     $('.M-box11').pagination(
         {mode: 'fixed'});
@@ -896,10 +892,177 @@ function loadData4(page) {
 }
 loadData4(0);
 
-
-
     //分页结束
+// 页面打开新手学习文章分页数据
+$('.M-box16').pagination(
+    {mode: 'fixed'});
+    $("#fif table tbody").html("");
+function loadData5(page) {
+    $.ajax({
+        type: "post",
+        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+        data: {
+            style:5,
+            page: page,
+            num: 21
+        },
+        dataType: "JSON",
+        success: function (res) {
 
+        console.log(res)
+        var html="";
+        for(var i in res.data){
+            var url=res.data[i].httpUrl,id=res.data[i].articleId,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
+            var href1="../XFbwz/XFbwz.html";
+            html+="<tr>";
+                html+="<td>";
+                    html+="<input type=checkbox data-cls="+res.data[i].articleId+">";
+                html+="</td>";
+                html+="<td>";
+                    html+="<span>"+res.data[i].title+"</span>";
+                html+="</td>";
+                html+="<td>"+res.data[i].addTime+"</td>";
+                html+="<td>"+res.data[i].sortId+"</td>";
+                html+="<td>"+res.data[i].author+"</td>";
+                html+="<td>";
+                    html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+"></a>";
+                    html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+">编辑&nbsp;&nbsp;</a>";
+                    html+="<a href="+href+"></an>";
+                    html+="<a href="+href+">预览</a>";
+                html+="</td>";
+            html+="</tr>";
+
+
+            $("#fif table tbody").html(html);
+
+            //点击删除
+            $("table tbody tr td input").click(function(){
+                console.log($(this).attr("data-cls"));
+                if($(this).parent().parent().hasClass("ac")){
+                    $(this).parent().parent().removeClass("ac");
+                }else{
+                    $(this).parent().parent().addClass("ac");
+                }
+                var id=$(this).attr("data-cls");
+                $("span.schu").click(function(){
+                    $.ajax({
+                        type:"post",
+                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        dataType:"JSON",
+                        data:{
+                            id:id
+                        },
+                        success:function(res){
+                            console.log(res)
+                        }
+
+                    });
+                    $("table tbody tr.ac").remove();
+                });
+                
+
+            });//点击删除结束
+            // 点击选中和取消选中
+            $("span.quanxgp").click(function(){
+                $("#twot table tbody tr td:first-child input").prop("checked",true);
+                $("#twot table tbody tr").addClass("ac");
+            });
+            $("span.quxgp").click(function(){
+                $("#twot table tbody tr td:first-child input").prop("checked",false);
+                $("#twot table tbody tr").removeClass("ac");
+            });
+
+        }
+            // $('.main_content').html()
+            $('.M-box16').pagination({
+                totalData: res.sum,
+                showData: res.data.length,
+                current:page,
+                pageCount: 2,
+                callback:function (res){
+                    $.ajax({
+                        type: "post",
+                        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+                        data: {
+                            style:5,
+                            page: page,
+                            num: 21
+                        },
+                        dataType: "JSON",
+                        success: function (res) {
+                            console.log(res)
+                            var html="";
+                            for(var i in res.data){
+                                var url=res.data[i].httpUrl,id=res.data[i].articleId,tb=res.data[i].tableName,href=url+'?id='+id+'&tb='+tb;
+                                var href1="../XFbwz/XFbwz.html";
+                                html+="<tr>";
+                                    html+="<td>";
+                                        html+="<input type=checkbox data-cls="+res.data[i].articleId+">";
+                                    html+="</td>";
+                                    html+="<td>";
+                                        html+="<span>"+res.data[i].title+"</span>";
+                                    html+="</td>";
+                                    html+="<td>"+res.data[i].addTime+"</td>";
+                                    html+="<td>"+res.data[i].sortId+"</td>";
+                                    html+="<td>"+res.data[i].author+"</td>";
+                                    html+="<td>";
+                                        html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+"></a>";
+                                        html+="<a href=../Fbwz/Fbwz.html?id="+res.data[i].articleId+">编辑&nbsp;&nbsp;</a>";
+                                        html+="<a href="+href+"></an>";
+                                        html+="<a href="+href+">预览</a>";
+                                    html+="</td>";
+                                html+="</tr>";
+                
+                
+                                $("#fif table tbody").html(html);
+                
+                                //点击删除
+                                $("table tbody tr td input").click(function(){
+                                    console.log($(this).attr("data-cls"));
+                                    if($(this).parent().parent().hasClass("ac")){
+                                        $(this).parent().parent().removeClass("ac");
+                                    }else{
+                                        $(this).parent().parent().addClass("ac");
+                                    }
+                                    var id=$(this).attr("data-cls");
+                                    $("span.schu").click(function(){
+                                        $.ajax({
+                                            type:"post",
+                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            dataType:"JSON",
+                                            data:{
+                                                id:id
+                                            },
+                                            success:function(res){
+                                                console.log(res)
+                                            }
+                    
+                                        });
+                                        $("table tbody tr.ac").remove();
+                                    });
+                                    
+                
+                                });//点击删除结束
+                                // 点击选中和取消选中
+                                $("span.quanxgp").click(function(){
+                                    $("#twot table tbody tr td:first-child input").prop("checked",true);
+                                    $("#twot table tbody tr").addClass("ac");
+                                });
+                                $("span.quxgp").click(function(){
+                                    $("#twot table tbody tr td:first-child input").prop("checked",false);
+                                    $("#twot table tbody tr").removeClass("ac");
+                                });
+                
+                            }
+                        }
+                    });
+                }
+            })
+
+        }
+    });
+}
+loadData5(0);
 
 
 

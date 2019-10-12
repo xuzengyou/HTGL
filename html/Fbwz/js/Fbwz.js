@@ -76,7 +76,7 @@ $(function(){
                         data:record,
                         success:function(res){
                             alert("发布成功");
-                            // window.location.href="../Wzlb/Wzlb.html"
+                            window.location.href="../Wzlb/Wzlb.html"
                         }
                     })
                 })

@@ -143,7 +143,6 @@ $(function(){
     var on =document.querySelector(".czxoo");
 
     // 财经外汇
-    // 单张上传照片  删除照片
     $(" .fileinput11").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cwhoo"));
@@ -152,8 +151,7 @@ $(function(){
     });
     var on =document.querySelector(".cwhoo");
 
-    // 财经股票
-    // 单张上传照片  删除照片
+    // 财经更多股票
     $(" .fileinput12").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".cgpoo"));
@@ -162,8 +160,28 @@ $(function(){
     });
     var on =document.querySelector(".cgpoo");
 
+    // 财经更多石油
+    $(" .fileinput13").change(function () {
+        var file = this.files[0];
+        readFile(file,$(this).parent().siblings(".cgssoo"));
+        image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
+    });
+    var on =document.querySelector(".cgssoo");
+
+    // 财经更多黄金
+    $(" .fileinput14").change(function () {
+        var file = this.files[0];
+        readFile(file,$(this).parent().siblings(".cghjoo"));
+        image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
+    });
+    var on =document.querySelector(".cghjoo");
+
+
+
+
     // 股票首页
-    // 单张上传照片  删除照片
     $(" .fileinput14").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gsoo"));

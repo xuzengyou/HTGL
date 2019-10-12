@@ -840,6 +840,7 @@
 }
 
 /* 财经外汇结束 */
+
 /* 财经股票开始 */
 .c .mainR .mRt .mRtt .mRttfi .cgp{
     margin-left: 20px;
@@ -899,6 +900,125 @@
 }
 
 /* 财经股票结束 */
+
+/* 财经更多石油开始 */
+.c .mainR .mRt .mRtt .mRttfi .cgss{
+    margin-left: 20px;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgss span{
+    display: inline-block;
+    width: 115px;
+    height: 120px;
+    line-height: 120px;
+    overflow: hidden;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgsso{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 13px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgsso .cgssoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgsso .cgssoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgsso .cgssoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttfi .cgsso .cgssot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttfi .cgsso .cgssot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+/* 财经更多石油结束 */
+
+/* 财经更多黄金开始 */
+.c .mainR .mRt .mRtt .mRttfi .cghj{
+    margin-left: 20px;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cghj span{
+    display: inline-block;
+    width: 115px;
+    height: 120px;
+    line-height: 120px;
+    overflow: hidden;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .mRtt .mRttfi .cghjo{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .mRtt .mRttfi .cghjo .cghjoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .mRtt .mRttfi .cghjo .cghjoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .mRtt .mRttfi .cghjo .cghjoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .mRtt .mRttfi .cghjo .cghjot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .mRtt .mRttfi .cghjo .cghjot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+/* 财经更多黄金结束 */
 
 /* 最终页面正文开始 */
 .c .mainR .mRt .mRtth{
@@ -1042,6 +1162,77 @@
     text-align: center;
 }
 /* 股票首页结束 */
+
+/* 股票更多开始 */
+/* .c .mainR .mRt .con .qgp{
+    display: none;
+}
+.c .mainR .mRt .con .qgp.ac{
+    display: block;
+}
+.c .mainR .mRt .con .qgp .qgpo{
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1700px;
+    height: 122px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.c .mainR .mRt .con .qgp .qgpo .gs{
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpo .gs span{
+    display: inline-block;
+    width: 125px;
+    line-height: 120px;
+    font-size: 28px;
+    vertical-align: middle;
+    text-align: center;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso{
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsoo{
+    width: 130px;
+    height: 80px;
+    background-color: #046EB8;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsoo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .6s;
+    overflow: hidden;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsoo img:hover{
+    transform: scale(1.2);
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsot input{
+    width: 130px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+}
+.c .mainR .mRt .con .qgp .qgpo .gso .gsot span{
+    cursor: pointer;
+    display: inline-block;
+    width: 130px;
+    line-height: 40px;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    z-index: -100;
+    background-color: #ccc;
+    border-radius: 3px;
+    text-align: center;
+} */
+/* 股票更多结束 */
+
 /* 股票个股资讯开始 */
 .c .mainR .mRt .con .qgp .qgpt{
     display: flex;
