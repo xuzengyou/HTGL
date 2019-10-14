@@ -190,8 +190,17 @@ $(function(){
     });
     var on =document.querySelector(".gsoo");
 
+    // 股票更多
+    $(" .fileggd").change(function () {
+        var file = this.files[0];
+        readFile(file,$(this).parent().siblings(".ggdoo"));
+        image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
+    });
+    var on =document.querySelector(".ggdoo");
+
+
     // 股票个股资讯
-    // 单张上传照片  删除照片
     $(" .fileinput15").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gzxoo"));
@@ -201,7 +210,6 @@ $(function(){
     var on =document.querySelector(".gzxoo");
 
     // 股票大盘评述
-    // 单张上传照片  删除照片
     $(" .fileinput16").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".gdpoo"));
@@ -232,7 +240,6 @@ $(function(){
     var on =document.querySelector(".wsoo");
 
     // 外汇要闻
-    // 单张上传照片  删除照片
     $(" .fileinput19").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".wywoo"));
@@ -242,7 +249,6 @@ $(function(){
     var on =document.querySelector(".wywoo");
 
     // 外汇EIA库存
-    // 单张上传照片  删除照片
     $(" .fileinput20").change(function () {
         var file = this.files[0];
         readFile(file,$(this).parent().siblings(".wkcoo"));
@@ -250,6 +256,15 @@ $(function(){
         style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".wkcoo");
+
+    // 外汇财经日历
+    $(" .fileinput21").change(function () {
+        var file = this.files[0];
+        readFile(file,$(this).parent().siblings(".cjrloo"));
+        image_id=$(this).attr("data-id");
+        style=$(this).attr("data-cls");
+    });
+    var on =document.querySelector(".cjrloo");
 
     // 最终页面正文
     // 单张上传照片  删除照片
@@ -260,9 +275,6 @@ $(function(){
         style=$(this).attr("data-cls");
     });
     var on =document.querySelector(".azwoo");
-
-
-
 
     //发请求开始
     function readFile(file,element) {

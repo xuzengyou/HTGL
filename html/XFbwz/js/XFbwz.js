@@ -667,7 +667,7 @@ $(function(){
             var month = date.getMonth() + 1;
             var hour = date.getHours();
             var minutes = date.getMinutes() ;
-            var seconds = date.getSeconds();
+    //         var seconds = date.getSeconds();
             var strDate = date.getDate();
             
             if (month >= 1 && month <= 9) {
@@ -676,7 +676,7 @@ $(function(){
             if (strDate >= 0 && strDate <= 9) {
                 strDate = "0" + strDate;
             }
-            var currentdate = year + seperator1 + month + seperator1 + strDate+"  "+hour+":" +minutes+":" +seconds;
+            var currentdate = year + seperator1 + month + seperator1 + strDate+"  "+hour+":" +minutes;
             
             return currentdate;
         };
