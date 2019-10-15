@@ -111,7 +111,8 @@ $(function(){
                             }
     
                         });
-                        $("table tbody tr.acc").remove();
+                        $("table tbody tr.ac").remove();
+                        window.location.reload();
                     });
                     
 
@@ -191,7 +192,8 @@ $(function(){
                                                 }
                         
                                             });
-                                            $("table tbody tr.acc").remove();
+                                            $("table tbody tr.ac").remove();
+                                            window.location.reload();
                                         });
                                         
 
