@@ -588,8 +588,8 @@ $(function(){
     });
     //站内本地上传
     $(" .shangc").change(function () {
-        $("div.yulan").html("");
-        console.log($("div.yulan").html(""))
+        // $("div.yulan").html("");
+        // console.log($("div.yulan").html(""))
         var file = this.files[0];
         readFile(file,$("div.slt"));
         // console.log($("input.fileinput4").val());
