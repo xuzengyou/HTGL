@@ -55,7 +55,7 @@ $(function(){
     function loadData0(page) {
         $.ajax({
             type: "post",
-            url: "http://192.168.0.171:8080/WSHD/jiekou6/select",
+            url: "http://39.100.114.237:8080/WSHD/jiekou6/select",
             data: {
                 page: page,
                 num: 21
@@ -101,7 +101,7 @@ $(function(){
                     $("span.schu").click(function(){
                         $.ajax({
                             type:"post",
-                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                            url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                             dataType:"JSON",
                             data:{
                                 id:id
@@ -137,7 +137,7 @@ $(function(){
                     callback:function (res){
                         $.ajax({
                             type: "post",
-                            url: "http://192.168.0.171:8080/WSHD/jiekou6/select",
+                            url: "http://39.100.114.237:8080/WSHD/jiekou6/select",
                             data: {
                                 page:res.getCurrent(),
                                 num:21
@@ -182,7 +182,7 @@ $(function(){
                                         $("span.schu").click(function(){
                                             $.ajax({
                                                 type:"post",
-                                                url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                                url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                                                 dataType:"JSON",
                                                 data:{
                                                     id:id
@@ -226,7 +226,7 @@ $('.M-box12').pagination(
 function loadData1(page) {
     $.ajax({
         type: "post",
-        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
         data: {
             style:1,
             page: page,
@@ -273,7 +273,7 @@ function loadData1(page) {
                 $("span.schu").click(function(){
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                         dataType:"JSON",
                         data:{
                             id:id
@@ -309,7 +309,7 @@ function loadData1(page) {
                 callback:function (res){
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+                        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
                         data: {
                             style:1,
                             page: page,
@@ -355,7 +355,7 @@ function loadData1(page) {
                                     $("span.schu").click(function(){
                                         $.ajax({
                                             type:"post",
-                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                                             dataType:"JSON",
                                             data:{
                                                 id:id
@@ -399,7 +399,7 @@ $('.M-box13').pagination(
 function loadData2(page) {
     $.ajax({
         type: "post",
-        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
         data: {
             style:2,
             page: page,
@@ -446,7 +446,7 @@ function loadData2(page) {
                 $("span.schu").click(function(){
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                         dataType:"JSON",
                         data:{
                             id:id
@@ -481,7 +481,7 @@ function loadData2(page) {
                 callback:function (res){
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+                        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
                         data: {
                             style:2,
                             page: page,
@@ -527,7 +527,7 @@ function loadData2(page) {
                                     $("span.schu").click(function(){
                                         $.ajax({
                                             type:"post",
-                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                                             dataType:"JSON",
                                             data:{
                                                 id:id
@@ -569,7 +569,7 @@ $('.M-box14').pagination(
 function loadData3(page) {
     $.ajax({
         type: "post",
-        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
         data: {
             style:3,
             page: page,
@@ -616,7 +616,7 @@ function loadData3(page) {
                 $("span.schu").click(function(){
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                         dataType:"JSON",
                         data:{
                             id:id
@@ -651,7 +651,7 @@ function loadData3(page) {
                 callback:function (res){
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+                        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
                         data: {
                             style:3,
                             page: page,
@@ -697,7 +697,7 @@ function loadData3(page) {
                                     $("span.schu").click(function(){
                                         $.ajax({
                                             type:"post",
-                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                                             dataType:"JSON",
                                             data:{
                                                 id:id
@@ -740,7 +740,7 @@ $('.M-box15').pagination(
 function loadData4(page) {
     $.ajax({
         type: "post",
-        url: "http://192.168.0.171:8080/WSHD/jiekou7/getHDarticle",
+        url: "http://39.100.114.237:8080/WSHD/jiekou7/getHDarticle",
         data: {
             page: page,
             num: 15
@@ -782,7 +782,7 @@ function loadData4(page) {
                 $("span.schu").click(function(){
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou7/delHDarticle",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou7/delHDarticle",
                         dataType:"JSON",
                         data:{
                             id:id
@@ -818,7 +818,7 @@ function loadData4(page) {
                 callback:function (res){
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou7/getHDarticle",
+                        url: "http://39.100.114.237:8080/WSHD/jiekou7/getHDarticle",
                         data: {
                             page: page,
                             num: 15
@@ -858,7 +858,7 @@ function loadData4(page) {
                                     $("span.schu").click(function(){
                                         $.ajax({
                                             type:"post",
-                                            url:"http://192.168.0.171:8080/WSHD/jiekou7/delHDarticle",
+                                            url:"http://39.100.114.237:8080/WSHD/jiekou7/delHDarticle",
                                             dataType:"JSON",
                                             data:{
                                                 id:id
@@ -902,7 +902,7 @@ $('.M-box16').pagination(
 function loadData5(page) {
     $.ajax({
         type: "post",
-        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
         data: {
             style:5,
             page: page,
@@ -949,7 +949,7 @@ function loadData5(page) {
                 $("span.schu").click(function(){
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                         dataType:"JSON",
                         data:{
                             id:id
@@ -984,7 +984,7 @@ function loadData5(page) {
                 callback:function (res){
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou6/selectByType",
+                        url: "http://39.100.114.237:8080/WSHD/jiekou6/selectByType",
                         data: {
                             style:5,
                             page: page,
@@ -1030,7 +1030,7 @@ function loadData5(page) {
                                     $("span.schu").click(function(){
                                         $.ajax({
                                             type:"post",
-                                            url:"http://192.168.0.171:8080/WSHD/jiekou6/Delete",
+                                            url:"http://39.100.114.237:8080/WSHD/jiekou6/Delete",
                                             dataType:"JSON",
                                             data:{
                                                 id:id

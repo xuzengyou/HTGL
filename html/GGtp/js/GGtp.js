@@ -270,7 +270,7 @@ $(function(){
                
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou7/ADImage",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou7/ADImage",
                         dataType:"json",
                         data:{
                             image:img.src,

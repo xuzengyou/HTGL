@@ -170,7 +170,7 @@ $(function(){
             if(title&&sortId){
                 $.ajax({
                     type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou6/Create",
+                    url:"http://39.100.114.237:8080/WSHD/jiekou6/Create",
                     dataType:"json",
                     contentType:"application/json;charset=UTF-8",
                     data:record,
@@ -190,7 +190,7 @@ $(function(){
         if(style&&style_id){
             $.ajax({
                 type:"post",
-                url:"http://192.168.0.171:8080/WSHD/jiekou7/huanDengImage",
+                url:"http://39.100.114.237:8080/WSHD/jiekou7/huanDengImage",
                 dataType:"JSON",
                 data:{
                     style:style,
@@ -223,7 +223,7 @@ $(function(){
     $.ajax({
         
         type:"post",
-        url:"http://192.168.0.171:8080/WSHD/jiekou7/selectFolder",
+        url:"http://39.100.114.237:8080/WSHD/jiekou7/selectFolder",
         dataType:"JSON",
         data:{},
         success:function(res){
@@ -253,7 +253,7 @@ $(function(){
                 function loadData(page) {
                     $.ajax({
                         type: "post",
-                        url: "http://192.168.0.171:8080/WSHD/jiekou7/selectImage2",
+                        url: "http://39.100.114.237:8080/WSHD/jiekou7/selectImage2",
                         data: {
                             folder:folder,
                             page: page,
@@ -310,7 +310,7 @@ $(function(){
                                 if(filename){
                                     $.ajax({
                                         type:"post",
-                                        url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                        url:"http://39.100.114.237:8080/WSHD/jiekou7/deleteImage1",
                                         dataType:"JSON",
                                         data:{
                                             folder:folde,
@@ -349,7 +349,7 @@ $(function(){
                                     console.log(res.getCurrent())
                                     $.ajax({
                                         type: "post",
-                                        url: "http://192.168.0.171:8080/WSHD/jiekou7/selectImage2",
+                                        url: "http://39.100.114.237:8080/WSHD/jiekou7/selectImage2",
                                         data: {
                                             folder:folder,
                                             page:res.getCurrent(),
@@ -402,7 +402,7 @@ $(function(){
                                                 if(filename){
                                                     $.ajax({
                                                         type:"post",
-                                                        url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteImage1",
+                                                        url:"http://39.100.114.237:8080/WSHD/jiekou7/deleteImage1",
                                                         dataType:"JSON",
                                                         data:{
                                                             folder:folde,
@@ -452,7 +452,7 @@ $(function(){
                 if(fold){
                     $.ajax({
                         type:"post",
-                        url:"http://192.168.0.171:8080/WSHD/jiekou7/insertFolder",
+                        url:"http://39.100.114.237:8080/WSHD/jiekou7/insertFolder",
                         dataType:"JSON",
                         data:{
                             newFile:fold
@@ -470,7 +470,7 @@ $(function(){
 
                 $.ajax({
                     type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/deleteFolder",
+                    url:"http://39.100.114.237:8080/WSHD/jiekou7/deleteFolder",
                     dataType:"JSON",
                     data:{
                         folder:newFile
@@ -607,7 +607,7 @@ $(function(){
                 $("input.lj").val(img.src);
                 $.ajax({
                     type:"post",
-                    url:"http://192.168.0.171:8080/WSHD/jiekou7/Image",
+                    url:"http://39.100.114.237:8080/WSHD/jiekou7/Image",
                     dataType:"json",
                     data:{
                         folder:folder,
