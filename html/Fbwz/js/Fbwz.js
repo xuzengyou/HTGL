@@ -58,6 +58,7 @@ $(function(){
             }else{
                 console.log($("input.lj").val());
                 $("button.fb").click(function(){
+                    console.log(record)
                     thumb=res.data.thumb;
                     console.log(thumb);
                     title=$("input.wzbt").val(),
@@ -76,7 +77,7 @@ $(function(){
                         data:record,
                         success:function(res){
                             alert("发布成功");
-                            window.location.href="../Wzlb/Wzlb.html"
+                            // window.location.href="../Wzlb/Wzlb.html"
                         }
                     })
                 })
@@ -199,6 +200,7 @@ $(function(){
                                         aid,articleId,sortId,title,intro,authorImg,author,copyfrom,inputer,httpUrl,keyword,hits,postNum,ontop,iselite,deleted,addTime,updateTime,createTime,
                                         lastPost,ownerTag,ownerRemark,htmlPath,filesPath,tempPath,thumb,htmlStatus,articleStatus,tableName,content
                                     });
+                                    console.log(record)
                                     $.ajax({
                                         type:"post",
                                         url:"http://39.100.114.237:8080/WSHD/jiekou6/Update",
@@ -207,7 +209,7 @@ $(function(){
                                         data:record,
                                         success:function(res){
                                             alert("发布成功");
-                                            window.location.href="../Wzlb/Wzlb.html"
+                                            // window.location.href="../Wzlb/Wzlb.html"
                                         }
                                     })
 
@@ -241,6 +243,9 @@ $(function(){
                                 thum=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-cls");
                                 shangcid=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:nth-child(2) span").attr("data-id");
                                 var ac=$(".c .mainR .zn .zNr .zNro table tbody tr.ac td:first-child input").is(":checked");
+                                console.log(ac);
+                                console.log(thum);
+                                console.log(ac+thum+shangcid);
                                 console.log(ac+thum+shangcid);
                                 if(ac){
                                     $(this).addClass("ac");
@@ -249,7 +254,7 @@ $(function(){
                                 }else{
                                     alert("请选择图片");
                                 };
-
+                                console.log(shangcid)
                                 $.ajax({
                                     type:"post",
                                     url:"http://39.100.114.237:8080/WSHD/jiekou7/selectImage1",
